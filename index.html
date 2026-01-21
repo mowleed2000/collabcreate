@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollabCreateMarketing | High-Performance Websites</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            background: #ffffff;
+            color: #000000;
+            transition: all 0.2s ease;
+        }
+        .cta-button:hover {
+            background: #e5e5e5;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-md border-b border-white/5">
+        <div class="text-xl font-bold tracking-tighter">COLLABCREATE</div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+            <a href="#philosophy" class="hover:text-white transition">Philosophy</a>
+            <a href="#services" class="hover:text-white transition">Packages</a>
+            <a href="#contact" class="hover:text-white transition">Start Project</a>
+        </div>
+        <a href="#contact" class="text-sm border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-black transition">Inquire</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 pt-20">
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl text-center">
+            <span class="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-widest uppercase border border-white/20 rounded-full text-gray-400">
+                The Performance-First Model
+            </span>
+            <h1 class="text-5xl md:text-8xl font-bold mb-8 tracking-tight gradient-text">
+                Professional Web. <br>Without the Agency Tax.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                We build high-converting, sleek digital infrastructure for people who prioritize profit over prestige. Fast delivery. Low overhead. Zero fluff.
+            </p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+                <a href="#services" class="cta-button px-8 py-4 rounded-lg font-bold text-center">View Pricing</a>
+                <a href="#philosophy" class="px-8 py-4 rounded-lg border border-white/20 font-bold hover:bg-white/5 transition text-center">Our Advantage</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Prop / Philosophy -->
+    <section id="philosophy" class="py-24 px-6 border-y border-white/5 bg-white/[0.01]">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">No Agency Bloat</h3>
+                <p class="text-gray-400">We don't have account managers, ping-pong tables, or "vision meetings." You pay for the code and the design, nothing else.</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Optimized Performance</h3>
+                <p class="text-gray-400">Our sites are built to load in milliseconds. In the modern economy, speed isn't a feature; it's a prerequisite for profit.</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4">The Bridge Model</h3>
+                <p class="text-gray-400">A website is a bridge between traffic and revenue. We build the most efficient bridges possible, then let you scale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Services -->
+    <section id="services" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Standardized Excellence</h2>
+                <p class="text-gray-400">High-tier output at an "OP" price point.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Landing Page -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col">
+                    <h4 class="text-xl font-bold mb-2">The Converter</h4>
+                    <div class="text-3xl font-bold mb-6">$499 <span class="text-sm font-normal text-gray-500">/ one-time</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-400 text-sm flex-grow">
+                        <li>• Single Page High-Impact UI</li>
+                        <li>• Conversion Optimized</li>
+                        <li>• Fully Responsive (Mobile-First)</li>
+                        <li>• Basic SEO Integration</li>
+                        <li>• 48-Hour Delivery</li>
+                    </ul>
+                    <a href="#contact" class="w-full py-3 border border-white/10 rounded-lg hover:bg-white hover:text-black transition text-center font-semibold">Select Plan</a>
+                </div>
+
+                <!-- Business Suite -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col border-white/30 scale-105 bg-white/[0.05]">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Best Value</div>
+                    <h4 class="text-xl font-bold mb-2">The Authority</h4>
+                    <div class="text-3xl font-bold mb-6">$1,200 <span class="text-sm font-normal text-gray-500">/ one-time</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-400 text-sm flex-grow">
+                        <li>• Multi-Page Architecture (up to 5)</li>
+                        <li>• Custom Brand Identity</li>
+                        <li>• Advanced Performance Tuning</li>
+                        <li>• Lead Capture Systems</li>
+                        <li>• 7-Day Delivery</li>
+                    </ul>
+                    <a href="#contact" class="w-full py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition text-center font-bold">Select Plan</a>
+                </div>
+
+                <!-- Custom Scale -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col">
+                    <h4 class="text-xl font-bold mb-2">The Custom</h4>
+                    <div class="text-3xl font-bold mb-6">Quote <span class="text-sm font-normal text-gray-500">/ based on needs</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-400 text-sm flex-grow">
+                        <li>• Complex Web Applications</li>
+                        <li>• E-commerce Integration</li>
+                        <li>• Custom Backend Logic</li>
+                        <li>• Content Management Systems</li>
+                        <li>• Ongoing Priority Support</li>
+                    </ul>
+                    <a href="#contact" class="w-full py-3 border border-white/10 rounded-lg hover:bg-white hover:text-black transition text-center font-semibold">Inquire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 bg-white text-black">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tighter">READY TO BUILD?</h2>
+                    <p class="text-lg opacity-70 mb-8 leading-relaxed">
+                        We don't do pitch decks. Fill out the form, we'll confirm the scope, and start the build. It's that simple.
+                    </p>
+                    <div class="space-y-2 font-mono text-sm">
+                        <p>LOC: REMOTE</p>
+                        <p>EST: 2024</p>
+                        <p>STATUS: ACCEPTING PROJECTS</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full">
+                    <form id="contactForm" class="space-y-4">
+                        <input type="text" placeholder="Full Name" class="w-full px-4 py-4 border-b-2 border-black focus:outline-none placeholder:text-gray-400 bg-transparent" required>
+                        <input type="email" placeholder="Email Address" class="w-full px-4 py-4 border-b-2 border-black focus:outline-none placeholder:text-gray-400 bg-transparent" required>
+                        <select class="w-full px-4 py-4 border-b-2 border-black focus:outline-none bg-transparent" required>
+                            <option value="" disabled selected>Select Package</option>
+                            <option value="converter">The Converter ($499)</option>
+                            <option value="authority">The Authority ($1,200)</option>
+                            <option value="custom">The Custom (Quote)</option>
+                        </select>
+                        <textarea placeholder="Project Details" rows="4" class="w-full px-4 py-4 border-b-2 border-black focus:outline-none placeholder:text-gray-400 bg-transparent" required></textarea>
+                        <button type="submit" class="w-full bg-black text-white py-4 font-bold uppercase tracking-widest hover:bg-gray-800 transition">Initialize Project</button>
+                    </form>
+                    <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded text-center">
+                        Request received. Check your inbox.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/10 text-center text-gray-500 text-xs">
+        <p class="mb-4">© 2024 COLLABCREATEMARKETING. NO RIGHTS RESERVED. JUST RESULTS.</p>
+        <div class="flex justify-center space-x-6">
+            <a href="#" class="hover:text-white transition">Twitter/X</a>
+            <a href="#" class="hover:text-white transition">LinkedIn</a>
+            <a href="#" class="hover:text-white transition">Privacy</a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('successMessage').classList.remove('hidden');
+        });
+
+        // Simple smooth scroll reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
