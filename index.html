@@ -1,382 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CollabCreateMarketing | High-Performance Websites</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            scroll-behavior: smooth;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        .glass-card:hover {
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-5px);
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #fff, #888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .cta-button {
-            background: #ffffff;
-            color: #000000;
-            transition: all 0.2s ease;
-        }
-        .cta-button:hover {
-            background: #e5e5e5;
-            transform: scale(1.02);
-        }
-    </style>
+    <title>CollabCreate Marketing | Premium Digital Solutions</title>
+    <meta name="description"
+        content="CollabCreate Marketing provides premium digital solutions for growing businesses. High-converting websites, branding, and strategic growth.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="antialiased overflow-x-hidden">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-md border-b border-white/5">
-        <div class="text-xl font-bold tracking-tighter">COLLABCREATE</div>
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-            <a href="#why-choose-us" class="hover:text-white transition">Why Choose Us</a>
-            <a href="#services" class="hover:text-white transition">Packages</a>
-            <a href="#portfolio" class="hover:text-white transition">Past Work</a>
-            <a href="#contact" class="hover:text-white transition">Start Project</a>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">CollabCreate.</a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#portfolio">Our Work</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#contact" class="nav-cta">Enquire</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <a href="#contact" class="text-sm border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-black transition">Enquire</a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 pt-20">
-        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-[120px]"></div>
-        </div>
-
-        <div class="relative z-10 max-w-4xl text-center">
-            <span class="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-widest uppercase border border-white/20 rounded-full text-gray-400">
-                The Performance-First Model
-            </span>
-            <h1 class="text-5xl md:text-8xl font-bold mb-8 tracking-tight gradient-text">
-                Professional Web. <br>Without the Agency Tax.
-            </h1>
-            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-                We build high-converting, sleek digital infrastructure for people who prioritize profit over prestige. Fast delivery. Low overhead. Zero fluff.
-            </p>
-            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
-                <a href="#services" class="cta-button px-8 py-4 rounded-lg font-bold text-center">View Pricing</a>
-                <a href="#contact" class="px-8 py-4 rounded-lg border border-white/20 font-bold hover:bg-white/5 transition text-center">Get Started</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="py-24 px-6 border-y border-white/5 bg-white/[0.01]">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Why Choose Us?</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">We deliver premium websites at a fraction of agency costs, without sacrificing quality or speed.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <div class="hero-grid-bg"></div>
+            <div class="container">
+                <div class="hero-content reveal">
+                    <div class="hero-badge">
+                        <span class="dot"></span>
+                        Accepting New Projects for Q1 2026
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Lightning Fast Delivery</h3>
-                    <p class="text-gray-400">Most projects completed in 48 hours to 7 days. We move at startup speed without the startup chaos.</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
+                    <h1>Elevate Your Digital <br><span class="gradient-text">Authority</span></h1>
+                    <p class="hero-sub">We build high-performance digital infrastructure for businesses that refuse to
+                        blend in. Precision-engineered for growth.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-primary">Enquire Now <i data-lucide="arrow-right"></i></a>
+                        <a href="#portfolio" class="btn-secondary">View Showcase</a>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Premium Quality</h3>
-                    <p class="text-gray-400">High-converting designs, pixel-perfect code, and performance optimization that rivals £10k+ agency builds.</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Unbeatable Pricing</h3>
-                    <p class="text-gray-400">No account managers, no overhead, no inflated costs. Just exceptional websites at prices that make sense.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Pricing / Services -->
-    <section id="services" class="py-24 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Standardized Excellence</h2>
-                <p class="text-gray-400">High-tier output at a fraction of the price.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Landing Page -->
-                <div class="glass-card p-8 rounded-2xl flex flex-col">
-                    <h4 class="text-xl font-bold mb-2">The Converter</h4>
-                    <div class="text-3xl font-bold mb-6">Browse Projects</div>
-                    <ul class="space-y-3 mb-8 text-gray-400 text-sm flex-grow">
-                        <li>• Single Page High-Impact UI</li>
-                        <li>• Conversion Optimized</li>
-                        <li>• Fully Responsive (Mobile-First)</li>
-                        <li>• Basic SEO Integration</li>
-                        <li>• 48-Hour Delivery</li>
-                    </ul>
-                    <a href="#contact" class="w-full py-3 border border-white/10 rounded-lg hover:bg-white hover:text-black transition text-center font-semibold">Select Plan</a>
-                </div>
-
-                <!-- Business Suite -->
-                <div class="glass-card p-8 rounded-2xl flex flex-col border-white/30 scale-105 bg-white/[0.05]">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Best Value</div>
-                    <h4 class="text-xl font-bold mb-2">The Authority</h4>
-                    <div class="text-3xl font-bold mb-6">Browse Projects</div>
-                    <ul class="space-y-3 mb-8 text-gray-400 text-sm flex-grow">
-                        <li>• Multi-Page Architecture (up to 5)</li>
-                        <li>• Custom Brand Identity</li>
-                        <li>• Advanced Performance Tuning</li>
-                        <li>• Lead Capture Systems</li>
-                        <li>• 7-Day Delivery</li>
-                    </ul>
-                    <a href="#contact" class="w-full py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition text-center font-bold">Select Plan</a>
-                </div>
-
-                <!-- Custom Scale -->
-                <div class="glass-card p-8 rounded-2xl flex flex-col">
-                    <h4 class="text-xl font-bold mb-2">The Custom</h4>
-                    <div class="text-3xl font-bold mb-6">Quote <span class="text-sm font-normal text-gray-500">/ based on needs</span></div>
-                    <ul class="space-y-3 mb-8 text-gray-400 text-sm flex-grow">
-                        <li>• Complex Web Applications</li>
-                        <li>• E-commerce Integration</li>
-                        <li>• Custom Backend Logic</li>
-                        <li>• Content Management Systems</li>
-                        <li>• Ongoing Priority Support</li>
-                    </ul>
-                    <a href="#contact" class="w-full py-3 border border-white/10 rounded-lg hover:bg-white hover:text-black transition text-center font-semibold">Inquire</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Past Work Section -->
-    <section id="portfolio" class="py-24 px-6 bg-white/[0.01] border-y border-white/5">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Built for Performance</h2>
-                <p class="text-gray-400">Real projects, real results. Every site designed to convert.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="glass-card rounded-2xl overflow-hidden group">
-                    <div class="aspect-video overflow-hidden border-b border-white/5">
-                        <img src="https://raw.githubusercontent.com/mowleed2000/collabcreate/main/Screenshot%202026-01-22%20193254.png" alt="E-Commerce Platform" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">E-Commerce Platform</h4>
-                        <p class="text-gray-400 text-sm mb-4">Complete online store with payment integration and inventory management.</p>
-                        <div class="flex items-center text-xs text-gray-500">
-                            <span class="px-2 py-1 bg-white/5 rounded mr-2">7 Days</span>
-                            <span class="px-2 py-1 bg-white/5 rounded">Custom Build</span>
+                    <div class="hero-proof">
+                        <div class="proof-item">
+                            <div class="number">99%</div>
+                            <div class="label">Client Satisfaction</div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="glass-card rounded-2xl overflow-hidden group">
-                    <div class="aspect-video overflow-hidden border-b border-white/5">
-                        <img src="https://raw.githubusercontent.com/mowleed2000/collabcreate/main/Screenshot%202026-01-22%20193603.png" alt="Professional Services" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Professional Services</h4>
-                        <p class="text-gray-400 text-sm mb-4">Multi-page authority site with lead capture and scheduling integration.</p>
-                        <div class="flex items-center text-xs text-gray-500">
-                            <span class="px-2 py-1 bg-white/5 rounded mr-2">5 Days</span>
-                            <span class="px-2 py-1 bg-white/5 rounded">The Authority</span>
+                        <div class="proof-item">
+                            <div class="number">24hr</div>
+                            <div class="label">Initial Blueprint</div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="glass-card rounded-2xl overflow-hidden group">
-                    <div class="aspect-video overflow-hidden border-b border-white/5">
-                        <img src="https://raw.githubusercontent.com/mowleed2000/collabcreate/main/Screenshot%202026-01-22%20193720.png" alt="Landing Page Converter" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Landing Page Converter</h4>
-                        <p class="text-gray-400 text-sm mb-4">High-impact single page designed to maximize conversions and ROI.</p>
-                        <div class="flex items-center text-xs text-gray-500">
-                            <span class="px-2 py-1 bg-white/5 rounded mr-2">48 Hours</span>
-                            <span class="px-2 py-1 bg-white/5 rounded">The Converter</span>
+                        <div class="proof-item">
+                            <div class="number">Elite</div>
+                            <div class="label">Performance Tier</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-24 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">How It Works</h2>
-                <p class="text-gray-400">From concept to launch, we handle everything. It's effortless.</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-white text-black flex items-center justify-center font-bold text-2xl">
-                        1
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">We Build Your Site</h3>
-                    <p class="text-gray-400 text-sm">Our expert team creates a professional, high-performance website tailored to your exact specifications and brand.</p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-white text-black flex items-center justify-center font-bold text-2xl">
-                        2
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Domain Registration</h3>
-                    <p class="text-gray-400 text-sm">We help you register the perfect domain name and handle all the technical setup seamlessly.</p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-white text-black flex items-center justify-center font-bold text-2xl">
-                        3
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Launch & Go Live</h3>
-                    <p class="text-gray-400 text-sm">We deploy your site to production, optimize performance, and ensure everything runs perfectly before handoff.</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-white text-black flex items-center justify-center font-bold text-2xl">
-                        4
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Full Transfer to You</h3>
-                    <p class="text-gray-400 text-sm">Complete ownership transferred to you with full documentation, training, and ongoing support whenever you need it.</p>
-                </div>
-            </div>
-
-            <div class="mt-16 glass-card p-8 rounded-2xl text-center max-w-3xl mx-auto">
-                <h3 class="text-2xl font-bold mb-4">Expert Support Every Step of the Way</h3>
-                <p class="text-gray-400 mb-6">Our dedicated agents make the entire process simple and stress-free. You'll have direct access to experienced professionals who guide you through every decision and answer every question. Need help after launch? We're always just a call away.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <div class="flex items-center text-sm">
-                        <svg class="w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Direct Agent Access
-                    </div>
-                    <div class="flex items-center text-sm">
-                        <svg class="w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Simple Process
-                    </div>
-                    <div class="flex items-center text-sm">
-                        <svg class="w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Ongoing Support Available
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 bg-white text-black">
-        <div class="max-w-4xl mx-auto">
-            <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tighter">READY TO BUILD?</h2>
-                    <p class="text-lg opacity-70 mb-8 leading-relaxed">
-                        We don't do pitch decks. Fill out the form, we'll confirm the scope, and start the build. It's that simple.
+        <!-- WHY CHOOSE US -->
+        <section class="why-section" id="why">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Our Edge</span>
+                    <h2 class="section-title">Engineered for Performance</h2>
+                    <p class="section-desc">More than just a website. We build assets that work for you while you sleep.
                     </p>
-                    <div class="space-y-2 text-sm">
-                        <p class="font-semibold">Get in touch:</p>
-                        <p>collabcreatemarketing@gmail.com</p>
-                    </div>
                 </div>
-                <div class="md:w-1/2 w-full">
-                    <form id="contactForm" action="https://usebasin.com/f/b7610bc9eec2" method="POST" class="space-y-4">
-                        <input type="text" name="name" placeholder="Full Name" class="w-full px-4 py-4 border-b-2 border-black focus:outline-none placeholder:text-gray-400 bg-transparent" required>
-                        <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-4 border-b-2 border-black focus:outline-none placeholder:text-gray-400 bg-transparent" required>
-                        <select name="package" class="w-full px-4 py-4 border-b-2 border-black focus:outline-none bg-transparent" required>
-                            <option value="" disabled selected>Select Package</option>
-                            <option value="converter">The Converter</option>
-                            <option value="authority">The Authority</option>
-                            <option value="custom">The Custom</option>
-                        </select>
-                        <textarea name="message" placeholder="Project Details" rows="4" class="w-full px-4 py-4 border-b-2 border-black focus:outline-none placeholder:text-gray-400 bg-transparent" required></textarea>
-                        <button type="submit" class="w-full bg-black text-white py-4 font-bold uppercase tracking-widest hover:bg-gray-800 transition">Enquire</button>
-                    </form>
-                    <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded text-center">
-                        Request received. Check your inbox.
+
+                <div class="why-grid">
+                    <div class="why-card reveal reveal-delay-1">
+                        <div class="why-icon"><i data-lucide="zap"></i></div>
+                        <h3>Ultra-Fast Performance</h3>
+                        <p>Optimized code and lightning-fast load times to ensure you never lose a visitor to a slow
+                            page.</p>
+                    </div>
+                    <div class="why-card reveal reveal-delay-2">
+                        <div class="why-icon"><i data-lucide="shield-check"></i></div>
+                        <h3>Institutional Trust</h3>
+                        <p>Designs that command authority and establish immediate credibility with your target audience.
+                        </p>
+                    </div>
+                    <div class="why-card reveal reveal-delay-3">
+                        <div class="why-icon"><i data-lucide="trending-up"></i></div>
+                        <h3>Conversion Focused</h3>
+                        <p>Every pixel is placed with intent, guiding your visitors towards a clear call to action.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-white/10 text-center text-gray-500 text-xs">
-        <p class="mb-4">© 2024 COLLABCREATEMARKETING. NO RIGHTS RESERVED. JUST RESULTS.</p>
-        <div class="flex justify-center space-x-6">
-            <a href="#" class="hover:text-white transition">Privacy</a>
+        <div class="section-divider"></div>
+
+        <!-- PRICING -->
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Pricing Plans</span>
+                    <h2 class="section-title">Simple, Tiered Investment</h2>
+                    <p class="section-desc">Choose the level of digital authority your business requires.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Starter -->
+                    <div class="pricing-card reveal reveal-delay-1">
+                        <div class="pricing-tier">The Starter</div>
+                        <div class="pricing-name">Foundational Presence</div>
+                        <div class="pricing-amount">
+                            <span class="currency">£</span>
+                            <span class="price">99</span>
+                        </div>
+                        <p class="pricing-desc">Perfect for testing a new concept or establishing a clean digital
+                            footprint.</p>
+                        <ul class="pricing-features">
+                            <li><span class="check"><i data-lucide="check"></i></span> High-Converting Landing Page</li>
+                            <li><span class="check"><i data-lucide="check"></i></span> Fully Responsive Design</li>
+                            <li><span class="check"><i data-lucide="check"></i></span> Essential SEO Setup</li>
+                            <li><span class="check"><i data-lucide="check"></i></span> 48-Hour Delivery</li>
+                        </ul>
+                        <a href="#contact" class="btn-secondary">Choose Starter</a>
+                    </div>
+
+                    <!-- Authority -->
+                    <div class="pricing-card featured reveal reveal-delay-2">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="pricing-tier">The Authority</div>
+                        <div class="pricing-name">Strategic Growth</div>
+                        <div class="pricing-amount">
+                            <span class="currency">£</span>
+                            <span class="price">199</span>
+                        </div>
+                        <p class="pricing-desc">The standard choice for established businesses looking to dominate their
+                            niche.</p>
+                        <ul class="pricing-features">
+                            <li><span class="check"><i data-lucide="check"></i></span> Up to 5 Custom Pages</li>
+                            <li><span class="check"><i data-lucide="check"></i></span> Custom Branding Pack</li>
+                            <li><span class="check"><i data-lucide="check"></i></span> Advanced Lead Capture</li>
+                            <li><span class="check"><i data-lucide="check"></i></span> 7-Day Precision Delivery</li>
+                            <li><span class="check"><i data-lucide="check"></i></span> 30 Days Post-Launch Support</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary">Choose Authority</a>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div class="pricing-card reveal reveal-delay-3">
+                        <div class="pricing-tier">The Enterprise</div>
+                        <div class="pricing-name">Complex Infrastructure</div>
+                        <div class="pricing-amount">
+                            <span class="currency">£</span>
+                            <span class="price">329</span>
+                            <span class="decimal">.99</span>
+                        </div>
+                        <p class="pricing-desc">Bespoke technical solutions for high-volume operations and custom
+                            workflows.</p>
+                        <ul class="pricing-features">
+                            <li><span class="check"><i data-lucide="check"></i></span> Unlimited Custom Pages</li>
+                            <li><span class="check"><i data-lucide="check"></i></span> E-commerce / CMS Integration</li>
+                            <li><span class="check"><i data-lucide="check"></i></span> Custom Backend Logic</li>
+                            <li><span class="check"><i data-lucide="check"></i></span> Priority Execution Queue</li>
+                            <li><span class="check"><i data-lucide="check"></i></span> Dedicated Account Manager</li>
+                        </ul>
+                        <a href="#contact" class="btn-secondary">Choose Enterprise</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO -->
+        <section class="portfolio-section" id="portfolio">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Case Studies</span>
+                    <h2 class="section-title">Proven Results</h2>
+                    <p class="section-desc">A glimpse into the digital assets we've deployed for our elite partners.</p>
+                </div>
+
+                <div class="portfolio-grid">
+                    <!-- Business Index -->
+                    <div class="portfolio-card reveal reveal-delay-1">
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <div class="browser-dot"></div>
+                                <div class="browser-dot"></div>
+                                <div class="browser-dot"></div>
+                                <div class="browser-address">ai-visibility.index</div>
+                            </div>
+                            <div class="portfolio-thumb">
+                                <img src="assets/index_thumb.png" alt="Business Index"
+                                    style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-tag">Data Strategy</div>
+                            <h3>Business Index</h3>
+                            <p>An independent research platform documenting AI discovery patterns for local businesses.
+                                Neutral and authoritative.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dial UP Course -->
+                    <div class="portfolio-card reveal reveal-delay-2">
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <div class="browser-dot"></div>
+                                <div class="browser-dot"></div>
+                                <div class="browser-dot"></div>
+                                <div class="browser-address">dialup.sales</div>
+                            </div>
+                            <div class="portfolio-thumb">
+                                <img src="assets/dialup_thumb.png" alt="DIAL UP Course"
+                                    style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-tag">Conversion Landing Page</div>
+                            <h3>DIAL UP Course</h3>
+                            <p>The complete cold calling playbook for hustlers. Aggressive, results-oriented design
+                                optimized for high-ticket conversion.</p>
+                        </div>
+                    </div>
+
+                    <!-- Mediareach -->
+                    <div class="portfolio-card reveal reveal-delay-3">
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <div class="browser-dot"></div>
+                                <div class="browser-dot"></div>
+                                <div class="browser-dot"></div>
+                                <div class="browser-address">mediareach.co.uk</div>
+                            </div>
+                            <div class="portfolio-thumb">
+                                <img src="assets/mediareach_thumb.png" alt="Mediareach"
+                                    style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-tag">Multicultural Marketing</div>
+                            <h3>Mediareach</h3>
+                            <p>Connecting cultures and building brands since 1986. Strategic institutional presence for
+                                diverse audience engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="process-section" id="process">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">The Blueprint</span>
+                    <h2 class="section-title">Our Procedural Approach</h2>
+                    <p class="section-desc">A systematic methodology to ensure consistency and excellence.</p>
+                </div>
+
+                <div class="process-grid reveal">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <h3>Discovery</h3>
+                        <p>Deep dive into your business objectives and market positioning.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <h3>Architecture</h3>
+                        <p>Mapping the user journey and information flow for maximum impact.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <h3>Assembly</h3>
+                        <p>Precision-led development following our institutional design system.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <h3>Deployment</h3>
+                        <p>Final optimization and transition to production environment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUPPORT BANNER -->
+        <section class="support-banner">
+            <div class="container">
+                <div class="support-inner reveal">
+                    <div class="support-icon"><i data-lucide="headphones"></i></div>
+                    <div class="support-text">
+                        <h3>24/7 Institutional Support</h3>
+                        <p>We don't just build and leave. Our partners receive priority technical assistance to ensure
+                            their digital assets never stop performing.</p>
+                    </div>
+                    <a href="#contact" class="btn-primary" style="margin-left: auto;">Contact Support</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="cta-section" id="contact">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Final Step</span>
+                    <h2 class="section-title">Ready to Capture Authority?</h2>
+                    <p class="section-desc">Fill out the form below to initiate your project blueprint.</p>
+                </div>
+
+                <div class="contact-form-container reveal">
+                    <form id="contactForm" action="https://usebasin.com/f/b7610bc9eec2" method="POST"
+                        class="contact-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="package">Target Tier</label>
+                                <select id="package" name="package" required>
+                                    <option value="" disabled selected>Select a package</option>
+                                    <option value="starter">The Starter (£99)</option>
+                                    <option value="authority">The Authority (£199)</option>
+                                    <option value="enterprise">The Enterprise (£329.99)</option>
+                                    <option value="custom">Custom Solution</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message">Project Requirements</label>
+                                <textarea id="message" name="message" rows="5"
+                                    placeholder="Tell us about your project objective..." required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">Initiate Blueprint</button>
+                    </form>
+                    <div id="successMessage" class="success-message hidden">
+                        <div class="success-icon"><i data-lucide="check-circle"></i></div>
+                        <h3>Request Received</h3>
+                        <p>Your project blueprint initiation has been logged. We will contact you within 24 hours.</p>
+                    </div>
+                </div>
+
+                <div class="cta-content" style="margin-top: 60px;">
+                    <div class="cta-email">
+                        <span class="mail-icon"><i data-lucide="mail"></i></span>
+                        hello@collabcreatemarketing.com
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-copy">
+                    &copy; 2026 CollabCreate Marketing. All Rights Reserved.
+                </div>
+                <div class="nav-logo">CollabCreate.</div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#why">Why Us</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            // Let the form submit to Basin naturally
-            // Show success message after a short delay
-            setTimeout(function() {
-                document.getElementById('contactForm').style.display = 'none';
-                document.getElementById('successMessage').classList.remove('hidden');
-            }, 1000);
-        });
-
-        // Simple smooth scroll reveal
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100');
-                    entry.target.classList.remove('translate-y-10');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.glass-card').forEach(el => {
-            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
-            observer.observe(el);
-        });
+        // Initialize Lucide icons
+        lucide.createIcons();
     </script>
 </body>
+
 </html>
