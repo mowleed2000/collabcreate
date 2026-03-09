@@ -22,7 +22,7 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 4rem 2rem;
             text-align: center;
@@ -48,29 +48,170 @@
             margin: 0 auto;
         }
 
-        /* Tally Embed Container */
-        .tally-embed-container {
-            width: 100%;
-            height: 800px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         .nav {
             padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Custom Form Styles */
+        .custom-form {
+            text-align: left;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .custom-form {
+                padding: 1.5rem;
+            }
+        }
+
+        .form-section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group.mb-0 {
+            margin-bottom: 0;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .optional-text {
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="email"],
+        .input-group input[type="url"],
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .input-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .input-group select {
+            appearance: none;
+            /* remove default arrow */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        .options-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-label:hover {
+            border-color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .option-label input[type="radio"],
+        .option-label input[type="checkbox"] {
+            margin-top: 0.25rem;
+            accent-color: var(--primary-color);
+            width: 1.1rem;
+            height: 1.1rem;
+            cursor: pointer;
+        }
+
+        .option-label span {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .submit-btn {
+            margin-top: 2rem;
+            padding: 1.25rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
     </style>
 </head>
@@ -92,26 +233,408 @@
         <div class="onboarding-header">
             <h1 class="header-title">Welcome to CollabCreate</h1>
             <p class="header-subtitle">Payment successful. Let’s get to work building your creator business. Fill out
-                the quick form below so our team can capture your exact vision.</p>
+                the specific details below so our team can capture your exact vision.</p>
         </div>
 
-        <!-- Tally Form Embed -->
-        <div class="tally-embed-container">
-            <!-- 
-                Replace this iframe src with your actual Tally form link!
-                For example: https://tally.so/r/YOUR_FORM_ID?transparentBackground=1
-            -->
-            <iframe
-                data-tally-src="https://tally.so/embed/w4pXXm?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                loading="lazy" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0"
-                title="Creator Onboarding"></iframe>
-        </div>
+        <form id="onboardingForm" action="https://formspree.io/f/meereben" method="POST" class="custom-form">
+            <!-- SECTION 1: Basic Information -->
+            <div class="form-section">
+                <h2>1. Basic Information</h2>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="Name" required placeholder="John Doe">
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address *</label>
+                        <input type="email" name="_replyto" required placeholder="john@example.com">
+                        <!-- Formspree uses _replyto to reply to the sender straight from your inbox -->
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Preferred creator name or brand name</label>
+                    <input type="text" name="Brand Name" placeholder="E.g., John Doe Fitness">
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label>Primary social handle <span class="optional-text">(Optional)</span></label>
+                        <input type="text" name="Primary Social Handle" placeholder="@username">
+                    </div>
+                    <div class="input-group">
+                        <label>Current website or link hub <span class="optional-text">(Optional)</span></label>
+                        <input type="url" name="Current Website URL" placeholder="https://linktr.ee/...">
+                    </div>
+                </div>
+                <div class="input-group mb-0">
+                    <label>Other social platforms <span class="optional-text">(Optional)</span></label>
+                    <input type="text" name="Other Social Platforms" placeholder="YouTube URL, Twitter handle, etc.">
+                </div>
+            </div>
+
+            <!-- SECTION 2: Creator Stage -->
+            <div class="form-section" id="stage-section">
+                <h2>2. Your Current Stage</h2>
+                <div class="input-group mb-0">
+                    <label>Which best describes your current situation? *</label>
+                    <div class="options-group">
+                        <label class="option-label">
+                            <input type="radio" name="creator_stage" value="already_run_business" required>
+                            <span>I already run a creator business and sell products</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="creator_stage" value="audience_no_product">
+                            <span>I have an audience, but I don't have a product yet</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="creator_stage" value="first_product">
+                            <span>I want to create my first ever digital product or course</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="creator_stage" value="no_audience">
+                            <span>I don't have an audience yet, but I want to launch something</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="creator_stage" value="website_only">
+                            <span>I just strictly need a creator website or link hub built</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3A: Existing Business -->
+            <div class="form-section logical-section hidden" id="section-3A">
+                <h2>3. The Existing Business</h2>
+                <div class="input-group">
+                    <label>What digital products do you currently sell?</label>
+                    <textarea name="3A_Current_Products" placeholder="List your active products here..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>Where are they currently hosted?</label>
+                    <select name="3A_Hosting_Platform">
+                        <option value="" disabled selected>Select a platform</option>
+                        <option value="Gumroad">Gumroad</option>
+                        <option value="Shopify">Shopify</option>
+                        <option value="Notion">Notion</option>
+                        <option value="Patreon">Patreon</option>
+                        <option value="Custom/Other">Custom / Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>What are your typical price points?</label>
+                    <input type="text" name="3A_Price_Points" placeholder="E.g., $10-$50">
+                </div>
+                <div class="input-group">
+                    <label>What is the biggest bottleneck or problem right now?</label>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="3A_Biggest_Problem"
+                                value="low_sales"><span>Low sales / conversion rates</span></label>
+                        <label class="option-label"><input type="radio" name="3A_Biggest_Problem"
+                                value="poor_funnel"><span>Poor or messy funnel</span></label>
+                        <label class="option-label"><input type="radio" name="3A_Biggest_Problem"
+                                value="messy_brand"><span>Messy links / weak brand image</span></label>
+                        <label class="option-label"><input type="radio" name="3A_Biggest_Problem"
+                                value="want_better_site"><span>I want a much better, premium website</span></label>
+                        <label class="option-label"><input type="radio" name="3A_Biggest_Problem"
+                                value="want_sponsors"><span>I want to look professional for sponsors</span></label>
+                    </div>
+                </div>
+                <div class="input-group mb-0">
+                    <label>What are you hoping we accomplish for you first?</label>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="3A_Primary_Goal"
+                                value="better_funnel"><span>Build a better funnel</span></label>
+                        <label class="option-label"><input type="radio" name="3A_Primary_Goal"
+                                value="digital_expansion"><span>Expand my digital product line</span></label>
+                        <label class="option-label"><input type="radio" name="3A_Primary_Goal"
+                                value="brand_upgrade"><span>Total brand site upgrade</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3B: Audience, No Product -->
+            <div class="form-section logical-section hidden" id="section-3B">
+                <h2>3. Audience, No Product</h2>
+                <div class="input-group">
+                    <label>What platform is your main audience on?</label>
+                    <select name="3B_Main_Platform">
+                        <option value="" disabled selected>Select a platform</option>
+                        <option value="TikTok">TikTok</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="YouTube">YouTube</option>
+                        <option value="Twitter/X">Twitter / X</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>What exact niche or topic do you create content about?</label>
+                    <input type="text" name="3B_Niche" placeholder="E.g., Mens Fashion, Personal Finance...">
+                </div>
+                <div class="input-group">
+                    <label>What are the most common questions your audience asks you?</label>
+                    <textarea name="3B_Common_Questions" placeholder="E.g., How do you organize your day?"></textarea>
+                </div>
+                <div class="input-group mb-0">
+                    <label>What type of digital product sounds the most exciting for you to sell?</label>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="3B_Product_Type"
+                                value="video_course"><span>Video Course</span></label>
+                        <label class="option-label"><input type="radio" name="3B_Product_Type"
+                                value="digital_guide"><span>Digital Guide / eBook</span></label>
+                        <label class="option-label"><input type="radio" name="3B_Product_Type"
+                                value="template_pack"><span>Digital Template Pack</span></label>
+                        <label class="option-label"><input type="radio" name="3B_Product_Type"
+                                value="paid_community"><span>Paid Membership / Community</span></label>
+                        <label class="option-label"><input type="radio" name="3B_Product_Type"
+                                value="not_sure"><span>Not sure yet, I need advice</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3C: First Product -->
+            <div class="form-section logical-section hidden" id="section-3C">
+                <h2>3. First Product</h2>
+                <div class="input-group">
+                    <label>What specific topic, skill, or framework could you teach people?</label>
+                    <textarea name="3C_Topic"
+                        placeholder="E.g., Video editing in Premiere Pro for beginners..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>Who is the exact person that would benefit from buying this?</label>
+                    <textarea name="3C_Target_Audience"
+                        placeholder="E.g., Content creators struggling to edit quickly..."></textarea>
+                </div>
+                <div class="input-group mb-0">
+                    <label>What format do you prefer?</label>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="3C_Format"
+                                value="video_course"><span>Video Course</span></label>
+                        <label class="option-label"><input type="radio" name="3C_Format"
+                                value="digital_guide"><span>Digital Guide (PDF/Notion)</span></label>
+                        <label class="option-label"><input type="radio" name="3C_Format"
+                                value="template_pack"><span>Template Pack</span></label>
+                        <label class="option-label"><input type="radio" name="3C_Format" value="toolkit"><span>Software
+                                / Toolkit</span></label>
+                        <label class="option-label"><input type="radio" name="3C_Format" value="not_sure"><span>Not sure
+                                yet</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3D: No Audience Yet -->
+            <div class="form-section logical-section hidden" id="section-3D">
+                <h2>3. No Audience Yet</h2>
+                <div class="input-group">
+                    <label>What niche, industry, or expertise are you building your brand around?</label>
+                    <textarea name="3D_Niche_Expertise"
+                        placeholder="Explain your expertise and focus here..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>What is your immediate focus going to be?</label>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="3D_Immediate_Focus"
+                                value="sell_product"><span>Selling a digital product from day one</span></label>
+                        <label class="option-label"><input type="radio" name="3D_Immediate_Focus"
+                                value="grow_brand"><span>Growing my personal brand and audience</span></label>
+                        <label class="option-label"><input type="radio" name="3D_Immediate_Focus"
+                                value="niche_community"><span>Creating a highly engaged niche community</span></label>
+                    </div>
+                </div>
+                <div class="input-group mb-0">
+                    <label>What social platforms do you plan to take the most seriously?</label>
+                    <input type="text" name="3D_Future_Platforms"
+                        placeholder="E.g., Short-form video on TikTok and Shorts">
+                </div>
+            </div>
+
+            <!-- SECTION 3E: Website Only -->
+            <div class="form-section logical-section hidden" id="section-3E">
+                <h2>3. Website Only</h2>
+                <div class="input-group">
+                    <label>What is the primary goal of this website?</label>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="3E_Primary_Goal"
+                                value="link_hub"><span>Premium Link Hub / Bio Link</span></label>
+                        <label class="option-label"><input type="radio" name="3E_Primary_Goal"
+                                value="portfolio"><span>Creator Portfolio</span></label>
+                        <label class="option-label"><input type="radio" name="3E_Primary_Goal"
+                                value="brand_homepage"><span>Full Creator Brand Home Page</span></label>
+                        <label class="option-label"><input type="radio" name="3E_Primary_Goal"
+                                value="event_page"><span>Specific Event or Promotion Page</span></label>
+                    </div>
+                </div>
+                <div class="input-group mb-0">
+                    <label>Which of these features are must-haves for you?</label>
+                    <div class="options-group">
+                        <label class="option-label"><input type="checkbox" name="3E_Desired_Features_Email"
+                                value="yes"><span>Email capture form</span></label>
+                        <label class="option-label"><input type="checkbox" name="3E_Desired_Features_Products"
+                                value="yes"><span>Links to my digital products</span></label>
+                        <label class="option-label"><input type="checkbox" name="3E_Desired_Features_Sponsor"
+                                value="yes"><span>Sponsor / Media kit information</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: Monetisation Goals -->
+            <div class="form-section">
+                <h2>4. Monetisation Goals</h2>
+                <div class="input-group mb-0">
+                    <label>What is the ultimate goal of your creator brand over the next 12 months?</label>
+                    <div class="options-group">
+                        <label class="option-label"><input type="checkbox" name="Goals_Grow_Audience"
+                                value="yes"><span>Grow audience volume rapidly</span></label>
+                        <label class="option-label"><input type="checkbox" name="Goals_Sell_Products"
+                                value="yes"><span>Sell digital products passively</span></label>
+                        <label class="option-label"><input type="checkbox" name="Goals_Build_EmailList"
+                                value="yes"><span>Build up a large email list</span></label>
+                        <label class="option-label"><input type="checkbox" name="Goals_Attract_Sponsors"
+                                value="yes"><span>Attract high-paying brand sponsors</span></label>
+                        <label class="option-label"><input type="checkbox" name="Goals_Full_Time"
+                                value="yes"><span>Transition into a full-time creator business</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: Assets -->
+            <div class="form-section">
+                <h2>5. Brand Assets</h2>
+                <div class="input-group mb-0">
+                    <label>Do you have any existing assets we need to use? Drop a Google Drive or Dropbox link here.
+                        <span class="optional-text">(Optional)</span></label>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Please include
+                        profile photos, logos, existing product covers, or brand colors you love.</p>
+                    <input type="url" name="Asset_Link" placeholder="https://drive.google.com/...">
+                </div>
+            </div>
+
+            <!-- SECTION 6: Package Details -->
+            <div class="form-section">
+                <h2>6. Package Details</h2>
+                <div class="input-group mb-0">
+                    <label>Which package did you just purchase? *</label>
+                    <div class="options-group">
+                        <label class="option-label"><input type="radio" name="Purchased_Package" value="Creator Starter"
+                                required><span>Creator Starter (£75)</span></label>
+                        <label class="option-label"><input type="radio" name="Purchased_Package"
+                                value="Creator Growth"><span>Creator Growth (£150)</span></label>
+                        <label class="option-label"><input type="radio" name="Purchased_Package"
+                                value="Creator Platform"><span>Creator Platform (£250)</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: The Vision -->
+            <div class="form-section">
+                <h2>7. The Vision</h2>
+                <div class="input-group mb-0">
+                    <label>In a few sentences, describe the ultimate vision for your specific creator brand or digital
+                        product. What does the dream look like? *</label>
+                    <textarea name="Ultimate_Vision" required placeholder="Type your full vision here..."></textarea>
+                </div>
+            </div>
+
+            <!-- Hidden empty subject to make inbox cleaner -->
+            <input type="hidden" name="_subject" value="🚀 New Client Onboarding Form Submitted!">
+
+            <button type="submit" class="btn btn-primary w-full submit-btn">Submit My Vision</button>
+            <p style="text-align: center; margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">By
+                submitting this form, your answers will go straight to the CollabCreate team.</p>
+        </form>
     </main>
 
-    <!-- Tally Embed Script -->
-    <script async src="https://tally.so/widgets/embed.js"></script>
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: auto;">
+        <div class="container footer-bottom" style="text-align: center; border: none;">
+            <p>&copy; 2026 CollabCreate Marketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
     <script>
         lucide.createIcons();
+
+        // ------------------ CONDITIONAL LOGIC ------------------
+        const stageRadios = document.querySelectorAll('input[name="creator_stage"]');
+        const logicSections = document.querySelectorAll('.logical-section');
+
+        // Target specific section containers
+        const sec3A = document.getElementById('section-3A');
+        const sec3B = document.getElementById('section-3B');
+        const sec3C = document.getElementById('section-3C');
+        const sec3D = document.getElementById('section-3D');
+        const sec3E = document.getElementById('section-3E');
+
+        stageRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                // First, hide all conditional sections
+                logicSections.forEach(sec => sec.classList.add('hidden'));
+
+                // Then, remove 'hidden' from the matching one
+                const val = e.target.value;
+                let activeSection = null;
+
+                if (val === 'already_run_business') activeSection = sec3A;
+                if (val === 'audience_no_product') activeSection = sec3B;
+                if (val === 'first_product') activeSection = sec3C;
+                if (val === 'no_audience') activeSection = sec3D;
+                if (val === 'website_only') activeSection = sec3E;
+
+                if (activeSection) {
+                    activeSection.classList.remove('hidden');
+                    // Add a tiny scroll so the user notices the new questions
+                    const offset = activeSection.getBoundingClientRect().top + window.scrollY - 100;
+                    window.scrollTo({ top: offset, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ------------------ SUCCESS REDIRECT & AJAX SUBMIT ------------------
+        const form = document.getElementById('onboardingForm');
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault(); // Stop standard redirect so we can show custom success message
+
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = "Submitting...";
+            submitBtn.disabled = true;
+
+            const data = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Success! Convert form container instantly into a success message
+                    form.innerHTML = `
+                        <div style="text-align: center; padding: 4rem 1rem;">
+                            <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+                                <i data-lucide="check-circle" style="color: var(--primary-color); width: 64px; height: 64px;"></i>
+                            </div>
+                            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1rem; font-weight: 800;">Vision Received.</h2>
+                            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6; max-width: 500px; margin: 0 auto;">We have successfully received your onboarding details. Our team is currently reviewing your profile and will be in touch via email very shortly to begin building your platform.</p>
+                            <a href="index.html" class="btn btn-secondary" style="margin-top: 3rem; display: inline-block;">Return to Homepage</a>
+                        </div>
+                    `;
+                    lucide.createIcons();
+                    // Scroll to top to see exact success message clearly
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    alert("Oops! There was a problem submitting your form. Please try again.");
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                alert("Oops! There was a network error submitting your form.");
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }
+        });
     </script>
 </body>
 
