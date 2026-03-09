@@ -321,12 +321,15 @@
             <div class="cta-box reveal">
                 <h2>Send Us Your Page</h2>
                 <p>If your content already gets attention, we’ll show you exactly how it can become a real platform.</p>
-                <form class="cta-form">
+                <form class="cta-form" action="https://formspree.io/f/meereben" method="POST">
+                    <input type="hidden" name="_subject" value="🚨 New Lead: Someone sent their page for review!">
+                    <!-- _next tells Formspree to bounce them back to your homepage instead of a blank screen -->
+                    <input type="hidden" name="_next" value="http://creators.collabcreatemarketing.com">
                     <div class="input-group">
                         <i data-lucide="instagram"></i>
-                        <input type="text" placeholder="@yourhandle" required>
+                        <input type="text" name="Instagram_Handle" placeholder="@yourhandle" required>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg">Start My Creator Platform</button>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit Page For Review</button>
                 </form>
             </div>
         </div>
