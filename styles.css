@@ -309,11 +309,36 @@ footer {
 
 @media (max-width: 1024px) {
   .nav-links {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 2rem 5%;
+    border-bottom: 1px solid var(--border-color);
+    transform: translateY(-150%);
+    transition: transform var(--transition-smooth);
+    z-index: 999;
   }
   
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .nav-links > li {
+    height: auto;
+    padding: 1rem 0;
+  }
+
   .hamburger {
     display: block;
+  }
+
+  .nav-cta .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
   }
   
   .footer-content {
