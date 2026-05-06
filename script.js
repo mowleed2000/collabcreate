@@ -1,45 +1,37 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Scroll reveal animation
-    const reveals = document.querySelectorAll('.reveal');
+// Mobile Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-    function reveal() {
-        const windowHeight = window.innerHeight;
-        const elementVisible = 150;
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  });
+}
 
-        reveals.forEach((reveal) => {
-            const elementTop = reveal.getBoundingClientRect().top;
-            if (elementTop < windowHeight - elementVisible) {
-                reveal.classList.add('active');
-            }
-        });
+// Scroll Reveals
+const reveals = document.querySelectorAll('.reveal');
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+  reveals.forEach(reveal => {
+    const revealTop = reveal.getBoundingClientRect().top;
+    const revealPoint = 150;
+    if (revealTop < windowHeight - revealPoint) {
+      reveal.classList.add('active');
     }
+  });
+}
 
-    // Initial reveal
-    setTimeout(reveal, 100);
-    window.addEventListener('scroll', reveal);
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // Mobile menu toggle (simple version)
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-
-    // In a real app we'd build a proper mobile drawer,
-    // this acts as a simple scroll anchor handler for now
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+// Navbar state on scroll
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
 });

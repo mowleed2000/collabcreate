@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Website | CollabCreate Marketing</title>
+    <meta name="description" content="A website built exactly to your brief. Custom design, professional photography, and integrated systems.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero-premium {
+            padding: 12rem 5% 8rem;
+            display: flex;
+            align-items: center;
+            background-color: #fafafa;
+        }
+
+        .hero-premium .content {
+            flex: 1;
+        }
+
+        .hero-premium h1 {
+            font-size: 5rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .hero-premium .image-side {
+            flex: 1;
+            padding-left: 5rem;
+        }
+
+        .hero-premium img {
+            border-radius: 8px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+        }
+
+        .distinction-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 5rem;
+        }
+
+        .distinction-card {
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+            background: white;
+        }
+
+        .distinction-card .number {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--accent-light);
+            -webkit-text-stroke: 1px var(--accent-color);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .photography-section {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 6rem;
+            align-items: center;
+            background-color: var(--text-color);
+            color: white;
+        }
+
+        .photography-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .photography-section p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .pricing-note {
+            text-align: center;
+            padding: 10rem 5%;
+        }
+
+        .pricing-note h2 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-section {
+            background-color: var(--footer-bg);
+            padding: 8rem 5%;
+        }
+
+        .premium-form {
+            max-width: 800px;
+            margin: 4rem auto 0;
+            background: white;
+            padding: 5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-premium, .photography-section, .distinction-grid, .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-premium { flex-direction: column; text-align: center; }
+            .hero-premium .image-side { padding-left: 0; margin-top: 4rem; }
+            .photography-section { text-align: center; }
+            .form-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: auto; }
+            .premium-form { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="CCM_Assets/logo.svg" alt="CCM Logo">
+            </a>
+                        <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Services</a>
+                    <ul class="dropdown">
+                        <li><a href="free-website.html">Free Website</a></li>
+                        <li><a href="review-system.html">Review System</a></li>
+                        <li><a href="growth-system.html">Growth System</a></li>
+                        <li><a href="premium-website.html">Premium Website</a></li>
+                        <li><a href="client-acquisition.html">Client Acquisition</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#enquire" class="btn btn-primary">Start Conversation</a>
+            </div>
+            <button class="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero-premium">
+        <div class="container" style="display: contents;">
+            <div class="content reveal">
+                <span class="section-label">Premium Website — Enquiry Only</span>
+                <h1>A website built exactly to your brief. Nothing off the shelf.</h1>
+                <p style="font-size: 1.25rem;">For businesses that have outgrown templates and need something built from scratch — custom scope, professional photography, integrated booking and ongoing maintenance included.</p>
+                <a href="#enquire" class="btn btn-primary" style="margin-top: 2rem;">Start the Conversation</a>
+            </div>
+            <div class="image-side reveal" style="transition-delay: 0.2s;">
+                <img src="CCM_Assets/premium-hero.jpg" alt="Premium Website Example">
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="reveal">
+            <span class="section-label">The Distinction</span>
+            <h2 style="font-size: 3.5rem;">This is not a standard build.</h2>
+        </div>
+        
+        <div class="distinction-grid">
+            <div class="distinction-card reveal">
+                <span class="number">01</span>
+                <h3>Custom scope and design</h3>
+                <p>We start from your brief, not a template. Every element is designed for your brand specifically.</p>
+            </div>
+            <div class="distinction-card reveal" style="transition-delay: 0.1s;">
+                <span class="number">02</span>
+                <h3>Professional photography included</h3>
+                <p>We coordinate a professional shoot for your business. Real photography of your work, team, and environment.</p>
+            </div>
+            <div class="distinction-card reveal" style="transition-delay: 0.2s;">
+                <span class="number">03</span>
+                <h3>Full backend integration</h3>
+                <p>Booking systems, enquiry management, automation — built in from the ground up, not bolted on.</p>
+            </div>
+            <div class="distinction-card reveal" style="transition-delay: 0.3s;">
+                <span class="number">04</span>
+                <h3>Ongoing maintenance</h3>
+                <p>The site is never static. We maintain, update and evolve it as your business grows.</p>
+            </div>
+        </div>
+        
+        <div class="reveal" style="margin-top: 6rem;">
+            <img src="CCM_Assets/premium-design.jpg" alt="Premium Design Process" style="border-radius: 8px; width: 100%; height: 500px; object-fit: cover;">
+        </div>
+    </section>
+
+    <section class="photography-section">
+        <div class="container reveal" style="display: contents;">
+            <div>
+                <img src="CCM_Assets/premium-photography.jpg" alt="Professional Photography" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 10% 8%;">
+                <h2>Stock images are for everyone. Your business deserves better.</h2>
+                <p style="font-size: 1.25rem;">We work with a professional photographer to capture your business as it actually is. Real work. Real environment. Real credibility. A site built on original photography converts at a fundamentally different level to one built on generic imagery.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-note container">
+        <div class="reveal">
+            <h2>Pricing is scoped to your project.</h2>
+            <p style="max-width: 800px; margin: 0 auto 3rem;">Every Premium Website is different. We scope the project first — understand exactly what you need, what you want to achieve and what a quality build looks like for your specific business.</p>
+            <a href="#enquire" class="btn btn-primary">Start the Conversation</a>
+        </div>
+        <div class="reveal" style="margin-top: 6rem; border-radius: 8px; overflow: hidden;">
+            <img src="CCM_Assets/premium-custom.jpg" alt="Custom Project Scope" style="width: 100%; height: 400px; object-fit: cover;">
+        </div>
+    </section>
+
+    <section id="enquire" class="form-section">
+        <div class="container">
+            <div class="reveal" style="text-align: center;">
+                <span class="section-label">Get in Touch</span>
+                <h2>Tell us about your project.</h2>
+            </div>
+            
+            <div class="premium-form reveal" style="transition-delay: 0.2s;">
+                <form>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Business Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Industry / Business Type</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Email Address</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Current website URL if applicable</label>
+                            <input type="url">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Tell us about your business and what you need</label>
+                            <textarea rows="6" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="CCM_Assets/logo.svg" alt="CCM Logo" class="logo">
+                    <p class="tagline">Transparency. Reliability. Results.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Agency</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="free-website.html">Free Website</a></li>
+                        <li><a href="review-system.html">Review System</a></li>
+                        <li><a href="growth-system.html">Growth System</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hello@collabcreatemarketing.com">hello@collabcreatemarketing.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CollabCreate Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

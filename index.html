@@ -1,959 +1,398 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>CollabCreateMarketing | Editorial Digital Agency</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&amp;family=DM+Sans:wght@300;400;500&amp;family=Bebas+Neue&amp;family=Epilogue:wght@700&amp;family=Manrope:wght@300;400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "on-secondary": "#3d2f00",
-                        "on-background": "#e5e2e1",
-                        "surface-container-lowest": "#0e0e0e",
-                        "tertiary": "#cbc6bf",
-                        "surface": "#131313",
-                        "error": "#ffb4ab",
-                        "on-tertiary-fixed": "#1d1c17",
-                        "on-surface-variant": "#d0c5b2",
-                        "on-tertiary": "#32302b",
-                        "error-container": "#93000a",
-                        "on-error-container": "#ffdad6",
-                        "surface-container": "#201f1f",
-                        "primary-container": "#c9a84c",
-                        "on-primary": "#3d2e00",
-                        "tertiary-fixed": "#e7e2da",
-                        "primary-fixed-dim": "#e6c364",
-                        "tertiary-container": "#afaba4",
-                        "surface-dim": "#131313",
-                        "inverse-on-surface": "#313030",
-                        "surface-container-high": "#2a2a2a",
-                        "surface-container-highest": "#353534",
-                        "outline": "#99907e",
-                        "secondary": "#ffe399",
-                        "on-secondary-container": "#685200",
-                        "on-primary-fixed-variant": "#584400",
-                        "on-primary-fixed": "#241a00",
-                        "inverse-surface": "#e5e2e1",
-                        "on-primary-container": "#503d00",
-                        "on-surface": "#e5e2e1",
-                        "on-tertiary-container": "#41403a",
-                        "outline-variant": "#4d4637",
-                        "surface-container-low": "#1c1b1b",
-                        "primary-fixed": "#ffe08f",
-                        "tertiary-fixed-dim": "#cac6be",
-                        "background": "#131313",
-                        "on-tertiary-fixed-variant": "#494741",
-                        "on-secondary-fixed-variant": "#584400",
-                        "secondary-container": "#f4c300",
-                        "primary": "#e6c364",
-                        "surface-bright": "#3a3939",
-                        "surface-variant": "#353534",
-                        "secondary-fixed": "#ffe08b",
-                        "surface-tint": "#e6c364",
-                        "inverse-primary": "#755b00",
-                        "on-error": "#690005",
-                        "secondary-fixed-dim": "#f1c100",
-                        "on-secondary-fixed": "#241a00"
-                    },
-                    fontFamily: {
-                        "headline": ["Syne", "sans-serif"],
-                        "body": ["DM Sans", "sans-serif"],
-                        "label": ["DM Sans", "sans-serif"],
-                        "display": ["Syne", "sans-serif"],
-                        "accent": ["Bebas Neue", "cursive"]
-                    },
-                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
-                },
-            },
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollabCreate Marketing | Expert Marketing Agency</title>
+    <meta name="description" content="CCM builds the infrastructure that brings customers to you. From free websites to automated client acquisition systems.">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            cursor: none;
-            background-color: #131313;
-        }
-        .noise-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.04;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-        .cosmic-bg {
-            background-color: #131313;
-        }
-        .custom-cursor {
-            position: fixed;
-            width: 8px; height: 8px;
-            background: #F5C400;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            transform: translate(-50%, -50%);
-        }
-        .custom-cursor-ring {
-            position: fixed;
-            width: 40px; height: 40px;
-            border: 1px solid #C9A84C;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s, height 0.3s;
-        }
-        .clip-diagonal {
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-        }
-        .marquee-container {
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .marquee-content {
-            display: inline-block;
-            animation: scroll 20s linear infinite;
-        }
-        @keyframes scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
-        .magnetic-hover {
-            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .bespoke-shape {
-            position: absolute;
-            background: radial-gradient(circle, rgba(230, 195, 100, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-            filter: blur(40px);
-            animation: float 20s infinite alternate cubic-bezier(0.45, 0, 0.55, 1);
-        }
-        @keyframes float {
-            from { transform: translate(0, 0) scale(1); }
-            to { transform: translate(50px, 50px) scale(1.2); }
-        }
-
-        /* About Section Bespoke Styles */
-        .about-section {
-            background: #0a0a0a;
-            padding: 100px 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-label-custom {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 64px;
-        }
-
-        .section-label-custom span {
-            font-size: 11px;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.3);
-        }
-
-        .section-label-custom::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: rgba(255,255,255,0.08);
-        }
-
-        .about-grid {
+        /* Page-specific styles */
+        .hero {
+            padding: 12rem 5% 8rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
             align-items: center;
+            gap: 4rem;
+            min-height: 90vh;
         }
-
-        .about-image-col {
+        
+        .hero-content h1 {
+            font-size: clamp(3.5rem, 6vw, 5.5rem);
+            margin-bottom: 2rem;
+            line-height: 1.05;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            max-width: 500px;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .hero-image {
             position: relative;
         }
-
-        .image-frame {
-            position: relative;
-            border-radius: 4px;
-            overflow: hidden;
-            aspect-ratio: 3/4;
-            max-width: 380px;
-        }
-
-        .image-frame img {
+        
+        .hero-image img {
+            border-radius: 8px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 30%;
-            display: block;
-            filter: grayscale(15%);
-            transition: filter 0.4s ease;
+            height: auto;
         }
 
-        .image-frame:hover img {
-            filter: grayscale(0%);
+        .services-overview {
+            background-color: var(--footer-bg);
         }
 
-        .image-frame::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 4px;
-            pointer-events: none;
+        .services-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 6rem;
         }
 
-        .founder-badge {
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            background: #fff;
-            color: #0a0a0a;
-            padding: 16px 20px;
-            border-radius: 4px;
-            z-index: 2;
+        .services-header h2 {
+            font-size: clamp(3rem, 5vw, 4.2rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
         }
 
-        .founder-badge .badge-name {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 22px;
-            letter-spacing: 0.06em;
-            line-height: 1;
-            margin-bottom: 2px;
+        .services-header p {
+            font-size: 1.25rem;
+            margin: 0 auto;
+            max-width: 600px;
         }
 
-        .founder-badge .badge-title {
-            font-size: 10px;
-            letter-spacing: 0.15em;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-link {
+            font-weight: 700;
+            color: var(--accent-color);
             text-transform: uppercase;
-            color: rgba(0,0,0,0.45);
-            font-weight: 400;
-        }
-
-        .image-line {
-            position: absolute;
-            top: 24px;
-            left: -24px;
-            width: 1px;
-            height: 60%;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent);
-        }
-
-        .about-text-col {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        .about-heading {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(48px, 5vw, 72px);
-            color: #fff;
-            line-height: 0.92;
-            letter-spacing: 0.02em;
-        }
-
-        .about-heading em {
-            font-style: normal;
-            color: rgba(255,255,255,0.25);
-        }
-
-        .about-body {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .about-body p {
-            font-size: 16px;
-            line-height: 1.75;
-            color: rgba(255,255,255,0.6);
-            font-weight: 300;
-        }
-
-        .about-body p strong {
-            color: rgba(255,255,255,0.9);
-            font-weight: 500;
-        }
-
-        .values-strip {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            margin-top: 8px;
-        }
-
-        .value-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            transition: padding-left 0.3s ease;
-            cursor: default;
-        }
-
-        .value-item:hover {
-            padding-left: 8px;
-        }
-
-        .value-num {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 13px;
-            color: rgba(255,255,255,0.2);
+            font-size: 0.85rem;
             letter-spacing: 0.1em;
-            min-width: 28px;
         }
 
-        .value-text {
-            font-size: 14px;
-            color: rgba(255,255,255,0.55);
-            font-weight: 400;
-            letter-spacing: 0.01em;
-        }
-
-        .value-text strong {
-            color: rgba(255,255,255,0.85);
-            font-weight: 500;
-        }
-
-        .about-cta {
-            display: inline-flex;
+        .why-ccm {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
             align-items: center;
-            gap: 10px;
-            padding: 14px 28px;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 100px;
+        }
+
+        .why-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .why-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .social-proof {
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            padding: 3rem;
+            background: white;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            font-family: var(--font-heading);
+        }
+
+        .cta-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('CCM_Assets/hero-growth-chart.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 10rem 5%;
+        }
+
+        .cta-section h2 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .cta-section p {
             color: rgba(255,255,255,0.8);
-            font-size: 13px;
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 400;
-            letter-spacing: 0.03em;
-            text-decoration: none;
-            transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
-            align-self: flex-start;
-            cursor: pointer;
-            background: transparent;
+            margin-bottom: 3rem;
         }
 
-        .about-cta:hover {
-            border-color: rgba(255,255,255,0.4);
-            color: #fff;
-            background: rgba(255,255,255,0.05);
-        }
-
-        @media (max-width: 768px) {
-            .about-section { padding: 64px 24px; }
-            .about-grid {
+        @media (max-width: 1024px) {
+            .hero {
                 grid-template-columns: 1fr;
-                gap: 48px;
+                padding-top: 8rem;
+                text-align: center;
             }
-            .image-frame { max-width: 100%; aspect-ratio: 3/4; }
-            .founder-badge { right: 16px; bottom: -16px; }
-            .image-line { display: none; }
-        }
-
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            .hero-btns {
+                justify-content: center;
+            }
+            .why-ccm {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body class="font-body text-on-surface selection:bg-primary selection:text-on-primary bg-background overflow-x-hidden">
-    <div class="noise-overlay"></div>
-    <!-- Bespoke Background Shapes -->
-    <div class="bespoke-shape w-[600px] h-[600px] -top-48 -left-48"></div>
-    <div class="bespoke-shape w-[800px] h-[800px] top-1/2 -right-64 opacity-60" style="animation-delay: -5s;"></div>
-    <div class="bespoke-shape w-[400px] h-[400px] bottom-0 left-1/4 opacity-40" style="animation-duration: 15s;"></div>
-    
-    <div class="custom-cursor" id="cursor-dot"></div>
-    <div class="custom-cursor-ring" id="cursor-ring"></div>
-    <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 border-none bg-neutral-900/70 backdrop-blur-md shadow-[0px_24px_80px_rgba(0,0,0,0.45)]">
-        <div class="flex justify-between items-center w-full px-4 md:px-8 py-6 max-w-full">
-            <div class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight md:tracking-tighter text-neutral-100 font-headline uppercase leading-none">
-                <span class="text-[#F5F0E8]">Collab</span><span class="text-[#C9A84C]">Create</span><span class="text-[#F5F0E8] hidden sm:inline">Marketing</span><span class="text-[#F5F0E8] sm:hidden">Mktg</span>
-            </div>
-            <div class="hidden md:flex items-center gap-10">
-                <a class="text-neutral-300 uppercase tracking-widest text-[11px] font-headline hover:text-amber-200 transition-all duration-300 cursor-none magnetic-hover" href="#about">About</a>
-                <a class="text-neutral-300 uppercase tracking-widest text-[11px] font-headline hover:text-amber-200 transition-all duration-300 cursor-none magnetic-hover" href="#portfolio">Work</a>
-                <a class="text-neutral-300 uppercase tracking-widest text-[11px] font-headline hover:text-amber-200 transition-all duration-300 cursor-none magnetic-hover" href="#pricing">Services</a>
-                <a class="text-neutral-300 uppercase tracking-widest text-[11px] font-headline hover:text-amber-200 transition-all duration-300 cursor-none magnetic-hover" href="#inquiry">Contact</a>
-            </div>
-            <a href="#inquiry" class="bg-primary text-on-primary px-8 py-3 font-headline font-bold uppercase tracking-tighter text-sm magnetic-hover hover:scale-105 transition-all">
-                Get Started
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="CCM_Assets/logo.svg" alt="CCM Logo">
             </a>
+            
+                        <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Services</a>
+                    <ul class="dropdown">
+                        <li><a href="free-website.html">Free Website</a></li>
+                        <li><a href="review-system.html">Review System</a></li>
+                        <li><a href="growth-system.html">Growth System</a></li>
+                        <li><a href="premium-website.html">Premium Website</a></li>
+                        <li><a href="client-acquisition.html">Client Acquisition</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-60 scale-110">
-                <source src="Website_Hero_Animation_Video_Generation.mp4" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 bg-gradient-to-b from-surface/30 via-surface/60 to-surface"></div>
-        </div>
-        <div class="relative z-10 container mx-auto px-8 text-center reveal">
-            <div class="inline-flex items-center gap-2 px-4 py-1 border border-primary/30 bg-surface/80 mb-12">
-                <span class="text-primary text-[10px] font-bold tracking-[0.3em] uppercase">✦ WEB DESIGN · SEO</span>
-            </div>
-            <h1 class="font-display font-extrabold text-3xl md:text-6xl tracking-tighter leading-[0.85] mb-8">
-                <div class="flex flex-col items-center">
-                    <span class="block">WEBSITES BUILT TO BRING</span>
-                    <span class="text-primary block">YOUR BUSINESS CUSTOMERS.</span>
-                </div>
-            </h1>
-            <p class="font-headline font-bold text-2xl md:text-3xl text-on-surface-variant max-w-3xl mx-auto mb-16 leading-relaxed">
-                Clean, fast, and designed to help people find you and take action.
-            </p>
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-16">
-                <a href="#inquiry" class="bg-primary text-on-primary px-10 py-5 font-headline font-bold uppercase tracking-tighter text-lg magnetic-hover hover:scale-105 transition-all">Get Started</a>
-                <a href="https://wa.me/447459887616" class="bg-surface border-2 border-primary text-primary px-10 py-5 font-headline font-bold uppercase tracking-tighter text-lg magnetic-hover hover:bg-primary hover:text-on-primary transition-all text-center">View Demo</a>
-            </div>
-            <p class="font-headline text-xs uppercase tracking-[0.3em] opacity-50">No pressure. If it’s not right, you don’t move forward.</p>
-        </div>
-    </section>
-    <!-- Marquee -->
-    <div class="bg-primary py-6 overflow-hidden border-y border-on-primary/10">
-        <div class="marquee-container flex items-center">
-            <div class="marquee-content flex gap-12 text-on-primary font-headline font-bold text-3xl uppercase tracking-tighter items-center">
-                <span>✦ WEB DESIGN</span> <span>✦ SEO STRATEGY</span> <span>✦ BRAND IDENTITY</span> <span>✦ CONTENT CREATION</span> <span>✦ PAID ACQUISITION</span> <span>✦ UI/UX DESIGN</span>
-                <span>✦ WEB DESIGN</span> <span>✦ SEO STRATEGY</span> <span>✦ BRAND IDENTITY</span> <span>✦ CONTENT CREATION</span> <span>✦ PAID ACQUISITION</span> <span>✦ UI/UX DESIGN</span>
+
+    <header class="hero">
+        <div class="hero-content reveal">
+            <h1>Your business deserves to be found.</h1>
+            <p>We build your website for free. Then we help you dominate your local market.</p>
+            <div class="hero-btns">
+                <a href="free-website.html" class="btn btn-primary">Get Your Free Website</a>
+                <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
             </div>
         </div>
-    </div>
-    <!-- Why Us Section -->
-    <section class="py-40 cosmic-bg relative overflow-hidden" id="why-us">
-        <div class="absolute inset-0 bg-surface/95"></div>
-        <div class="container mx-auto px-8 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-10 gap-16 items-center reveal">
-                <div class="md:col-span-5">
-                    <h2 class="font-display text-3xl sm:text-4xl md:text-7xl font-extrabold leading-tight md:leading-none mb-10 tracking-tight md:tracking-tighter">
-                        DESIGN THAT WORKS FOR <span class="text-primary">YOUR BUSINESS.</span>
-                    </h2>
-                    <p class="text-on-surface-variant text-xl leading-relaxed mb-16 opacity-80">
-                        We build websites that are simple, fast, and built with one goal — helping your business get noticed and chosen.
-                    </p>
-                    <div class="grid grid-cols-2 gap-12">
-                        <div class="group cursor-none">
-                            <span class="material-symbols-outlined text-primary text-5xl mb-4 block group-hover:scale-110 transition-transform">check_circle</span>
-                            <h4 class="font-headline text-sm uppercase tracking-widest font-bold mb-2">Clean Design</h4>
-                            <p class="text-xs text-on-surface-variant leading-relaxed opacity-60">Modern aesthetics built for clarity and impact.</p>
-                        </div>
-                        <div class="group cursor-none">
-                            <span class="material-symbols-outlined text-primary text-5xl mb-4 block group-hover:scale-110 transition-transform">devices</span>
-                            <h4 class="font-headline text-sm uppercase tracking-widest font-bold mb-2">Mobile Ready</h4>
-                            <p class="text-xs text-on-surface-variant leading-relaxed opacity-60">Built flawlessly for users on any device.</p>
-                        </div>
-                        <div class="group cursor-none">
-                            <span class="material-symbols-outlined text-primary text-5xl mb-4 block group-hover:scale-110 transition-transform">trending_up</span>
-                            <h4 class="font-headline text-sm uppercase tracking-widest font-bold mb-2">Conversion Optimised</h4>
-                            <p class="text-xs text-on-surface-variant leading-relaxed opacity-60">Designed to turn viewers into loyal customers.</p>
-                        </div>
-                        <div class="group cursor-none">
-                            <span class="material-symbols-outlined text-primary text-5xl mb-4 block group-hover:scale-110 transition-transform">fingerprint</span>
-                            <h4 class="font-headline text-sm uppercase tracking-widest font-bold mb-2">Brand Focused</h4>
-                            <p class="text-xs text-on-surface-variant leading-relaxed opacity-60">Capturing the true essence and heart of your brand.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:col-span-5 relative group">
-                    <div class="aspect-[4/5] relative border border-primary/10 bg-surface-container overflow-hidden rounded-sm transform group-hover:scale-[1.02] transition-all duration-700">
-                        <img alt="London Luxury Shop" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1520004434532-668416a08753?q=80&w=2070&auto=format&fit=crop"/>
-                        <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-image reveal" style="transition-delay: 0.2s;">
+            <img src="CCM_Assets/hero-handshake.jpg" alt="Business Handshake">
         </div>
-    </section>
-    <!-- Portfolio Section -->
-    <section class="py-40 bg-surface-container-lowest relative overflow-hidden" id="portfolio">
-        <div class="container mx-auto px-8 relative z-10">
-            <div class="text-center mb-24 reveal">
-                <h2 class="font-display text-3xl sm:text-4xl md:text-7xl font-extrabold leading-tight md:leading-none mb-6 tracking-tight md:tracking-tighter">
-                    SELECTED <span class="text-primary italic font-headline">WORKS</span>
-                </h2>
-                <p class="text-on-surface-variant font-headline font-bold text-sm tracking-widest uppercase opacity-60">High-end digital presence for London's finest businesses.</p>
+    </header>
+
+    <section class="services-overview" id="how-it-works">
+        <div class="container">
+            <div class="services-header reveal">
+                <span class="section-label">What We Do</span>
+                <h2>From a free website to a fully automated client acquisition system.</h2>
+                <p>CCM builds the infrastructure that brings customers to you.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
-                <!-- Portfolio Item 1 -->
-                <div class="group relative overflow-hidden border border-primary/10 bg-surface-container hover:border-primary/40 transition-all duration-700">
-                    <div class="aspect-[16/10] relative overflow-hidden">
-                        <img src="assets/portfolio-metimeoff.png" alt="Me Time Off" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000">
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div>
+                        <h3>Free Website</h3>
+                        <p>A professionally built website. No cost. No commitment. Live within 7 days.</p>
                     </div>
-                    <div class="p-8 border-t border-primary/10 flex justify-between items-center group-hover:bg-primary transition-all duration-500">
-                        <div>
-                            <h3 class="font-headline font-bold text-lg uppercase tracking-tight group-hover:text-on-primary">Me Time Off</h3>
-                            <p class="text-[10px] uppercase tracking-widest opacity-60 group-hover:text-on-primary/80">Wellness & Holistic Therapy</p>
-                        </div>
-                        <span class="material-symbols-outlined text-primary group-hover:text-on-primary">north_east</span>
-                    </div>
+                    <a href="free-website.html" class="service-link">Get Yours Free &rarr;</a>
                 </div>
 
-                <!-- Portfolio Item 2 -->
-                <div class="group relative overflow-hidden border border-primary/10 bg-surface-container hover:border-primary/40 transition-all duration-700">
-                    <div class="aspect-[16/10] relative overflow-hidden">
-                        <img src="assets/portfolio-wrongfuel.png" alt="Wrong Fuel Recovery" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000">
+                <div class="service-card reveal" style="transition-delay: 0.1s;">
+                    <div>
+                        <h3>Review System</h3>
+                        <p>Automated follow-up after every job. More Google reviews. Higher ranking. Without lifting a finger.</p>
                     </div>
-                    <div class="p-8 border-t border-primary/10 flex justify-between items-center group-hover:bg-primary transition-all duration-500">
-                        <div>
-                            <h3 class="font-headline font-bold text-lg uppercase tracking-tight group-hover:text-on-primary">Wrong Fuel Recovery</h3>
-                            <p class="text-[10px] uppercase tracking-widest opacity-60 group-hover:text-on-primary/80">Professional Breakdown Services</p>
-                        </div>
-                        <span class="material-symbols-outlined text-primary group-hover:text-on-primary">north_east</span>
-                    </div>
+                    <a href="review-system.html" class="service-link">Learn More &rarr;</a>
                 </div>
 
-                <!-- Portfolio Item 3 -->
-                <div class="group relative overflow-hidden border border-primary/10 bg-surface-container hover:border-primary/40 transition-all duration-700">
-                    <div class="aspect-[16/10] relative overflow-hidden">
-                        <img src="assets/portfolio-luckypig.png" alt="The Lucky Pig" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000">
+                <div class="service-card reveal" style="transition-delay: 0.2s;">
+                    <div>
+                        <h3>Growth System</h3>
+                        <p>Website, reviews, booking and landing pages — everything on autopilot for one monthly fee.</p>
                     </div>
-                    <div class="p-8 border-t border-primary/10 flex justify-between items-center group-hover:bg-primary transition-all duration-500">
-                        <div>
-                            <h3 class="font-headline font-bold text-lg uppercase tracking-tight group-hover:text-on-primary">The Lucky Pig</h3>
-                            <p class="text-[10px] uppercase tracking-widest opacity-60 group-hover:text-on-primary/80">Premium London Venue</p>
-                        </div>
-                        <span class="material-symbols-outlined text-primary group-hover:text-on-primary">north_east</span>
-                    </div>
+                    <a href="growth-system.html" class="service-link">Learn More &rarr;</a>
                 </div>
 
-                <!-- Portfolio Item 4 -->
-                <div class="group relative overflow-hidden border border-primary/10 bg-surface-container hover:border-primary/40 transition-all duration-700">
-                    <div class="aspect-[16/10] relative overflow-hidden">
-                        <img src="assets/portfolio-bestbarbers.png" alt="Best Barbers" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000">
+                <div class="service-card reveal" style="transition-delay: 0.3s;">
+                    <div>
+                        <h3>Client Acquisition</h3>
+                        <p>We study your unit economics and build a paid acquisition system designed around what you can actually afford.</p>
                     </div>
-                    <div class="p-8 border-t border-primary/10 flex justify-between items-center group-hover:bg-primary transition-all duration-500">
-                        <div>
-                            <h3 class="font-headline font-bold text-lg uppercase tracking-tight group-hover:text-on-primary">Best Barbers</h3>
-                            <p class="text-[10px] uppercase tracking-widest opacity-60 group-hover:text-on-primary/80">Master Men's Grooming</p>
-                        </div>
-                        <span class="material-symbols-outlined text-primary group-hover:text-on-primary">north_east</span>
-                    </div>
+                    <a href="client-acquisition.html" class="service-link">Enquire &rarr;</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section" id="about">
-      <div class="about-inner">
-        <div class="section-label-custom">
-          <span>About CollabCreate</span>
-        </div>
-
-        <div class="about-grid">
-          <!-- Image Column -->
-          <div class="about-image-col reveal">
-            <div class="image-line"></div>
-            <div class="image-frame">
-              <img src="assets/founder.jpg" alt="Mo — Founder of CollabCreate Marketing" />
-            </div>
-            <div class="founder-badge">
-              <div class="badge-name">Mo</div>
-              <div class="badge-title">Founder & Director</div>
-            </div>
-          </div>
-
-          <!-- Text Column -->
-          <div class="about-text-col reveal">
-            <h2 class="about-heading text-neutral-100">
-              Built from<br>
-              <em class="opacity-30">the ground</em><br>
-              up.
-            </h2>
-
-            <div class="about-body">
-              <p>
-                CollabCreate Marketing was built on a simple observation: <strong>local businesses in West London were being overcharged by agencies and underserved by freelancers.</strong> Traditional agencies can't reprice downward. Solo operators chase higher-ticket work. That left a gap — and we stepped into it.
-              </p>
-              <p>
-                We're a West London digital agency specialising in custom websites, SEO, and brand identity for small businesses. <strong>No bloated retainers. No corporate process. Just work that gets done, looks exceptional, and actually moves the needle</strong> for the businesses we build for.
-              </p>
-              <p>
-                Every site we build starts with a free personalised demo — so you can see exactly what your business looks like online before you spend a penny. If it's not right, you don't move forward. That's how it should be.
-              </p>
-            </div>
-
-            <div class="values-strip">
-              <div class="value-item">
-                <span class="value-num">01</span>
-                <span class="value-text"><strong>Quality without compromise</strong> — every tier built to the same standard</span>
-              </div>
-              <div class="value-item">
-                <span class="value-num">02</span>
-                <span class="value-text"><strong>See it before you pay</strong> — a free demo built for your business first</span>
-              </div>
-              <div class="value-item">
-                <span class="value-num">03</span>
-                <span class="value-text"><strong>Built for local</strong> — West London businesses are our people</span>
-              </div>
-              <div class="value-item">
-                <span class="value-num">04</span>
-                <span class="value-text"><strong>Fast and permanent</strong> — live in days, not months. You own it outright</span>
-              </div>
-            </div>
-
-            <a href="#inquiry" class="about-cta">Start your project →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services / Pricing -->
-    <section class="relative py-32 bg-surface-container-low overflow-hidden cosmic-bg" id="pricing">
-        <div class="absolute inset-0 bg-surface/90"></div>
-        <div class="container mx-auto px-8 relative z-10 text-center">
-            <div class="bg-primary text-on-primary py-4 px-8 mb-24 flex justify-between items-center flex-wrap gap-4">
-                <span class="font-headline font-bold text-xs uppercase tracking-[0.2em]">Our Standard</span>
-                <span class="font-headline font-bold text-xl">"Every tier is built to the same standard. What changes is the scope — not the quality."</span>
-            </div>
-            <p class="font-headline font-bold text-lg mb-4 text-primary uppercase tracking-widest">Simple pricing. No confusion.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-left">
-                <!-- Tier 1 -->
-                <div class="bg-surface p-12 group hover:bg-surface-container-high transition-all duration-500 border-t-4 border-transparent hover:border-primary">
-                    <span class="font-accent text-4xl opacity-20 mb-4 block">01</span>
-                    <h3 class="font-headline text-2xl font-bold uppercase mb-2">BE FOUND</h3>
-                    <div class="font-accent text-5xl text-primary mb-2">£199</div>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-6">Ambition Level: Local Presence</p>
-                    <ul class="space-y-4 mb-12 text-sm text-on-surface-variant">
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Mobile-Optimised Presence</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Custom Premium UI/UX</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Local SEO Optimisation</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> GBP Connection & Map Sync</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> SSL Security (HTTPS)</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> WhatsApp/Call Integration</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Free Lifetime Hosting</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> 3 Updates Per Month</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/dRm3cu95pdrp7we8kGffy0b" class="block w-full py-4 border border-outline-variant uppercase text-[10px] font-bold tracking-widest hover:bg-primary hover:text-on-primary hover:border-primary transition-all text-center">Select Plan</a>
-                </div>
-                <!-- Tier 2 -->
-                <div class="bg-surface-container-highest p-12 group transition-all duration-500 border-t-4 border-primary shadow-2xl scale-105 z-20">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="font-accent text-4xl text-primary">02</span>
-                        <span class="bg-primary text-on-primary text-[8px] font-bold px-2 py-1 uppercase tracking-widest">Most Popular</span>
-                    </div>
-                    <h3 class="font-headline text-2xl font-bold uppercase mb-2">BE CHOSEN</h3>
-                    <div class="font-accent text-5xl text-primary mb-2">£499</div>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-on-secondary-container mb-6">Ambition Level: Online Transactions</p>
-                    <ul class="space-y-4 mb-12 text-sm">
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[18px]">check</span> EVERYTHING IN BE FOUND, PLUS:</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[18px]">check</span> Professional Photography</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[18px]">check</span> Domain Management</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[18px]">check</span> Stripe/PayPal Payment Integration</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[18px]">check</span> Custom Multi-Page Structure</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[18px]">check</span> Product Listings</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[18px]">check</span> Advanced Form Logic</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[18px]">check</span> Priority Build (5 Days)</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[18px]">check</span> 6 Updates Per Month</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/fZu7sKepJfzxbMufN8ffy0c" class="block w-full py-4 bg-primary text-on-primary uppercase text-[10px] font-bold tracking-widest hover:bg-secondary transition-all text-center">Select Plan</a>
-                </div>
-                <!-- Tier 3 -->
-                <div class="bg-surface p-12 group hover:bg-surface-container-high transition-all duration-500 border-t-4 border-transparent hover:border-primary">
-                    <span class="font-accent text-4xl opacity-20 mb-4 block">03</span>
-                    <h3 class="font-headline text-2xl font-bold uppercase mb-2">BE EVERYWHERE</h3>
-                    <div class="font-accent text-5xl text-primary mb-2">FROM £999</div>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-6">Ambition Level: Market Authority</p>
-                    <ul class="space-y-4 mb-12 text-sm text-on-surface-variant">
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> EVERYTHING IN BE CHOSEN, PLUS:</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Online Booking System</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Unlimited Revisions</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Unlimited Updates</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Logo & Full Brand Identity</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Social Platform Setup/Branding</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Professional Copywriting</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Full Competitor Analysis</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Review Generation System</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> 3 SEO Blog Posts at Launch</li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">check</span> Full Handover & Training</li>
-                    </ul>
-                    <a href="#inquiry" class="block w-full py-4 border border-outline-variant uppercase text-[10px] font-bold tracking-widest hover:bg-primary hover:text-on-primary hover:border-primary transition-all text-center">Enquire Now</a>
-                </div>
-            </div>
-            <div class="mt-24 space-y-4">
-                <p class="text-on-surface-variant font-headline font-bold uppercase tracking-widest text-xs">Most businesses start simple and expand later.</p>
-                <p class="text-on-surface-variant font-headline font-bold uppercase tracking-widest text-xs">Everything is handled for you. Built and ready within days.</p>
-            </div>
-        </div>
-    </section>
-    <!-- Process Section -->
-    <section class="py-32 bg-surface">
-        <div class="container mx-auto px-8">
-            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight md:tracking-tighter text-center mb-16 md:mb-24 uppercase">How it works</h2>
-            <div class="relative">
-                <div class="absolute top-1/2 left-0 w-full h-[1px] border-t border-dashed border-outline-variant hidden lg:block"></div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
-                    <div class="bg-surface flex flex-col items-center text-center">
-                        <div class="font-accent text-7xl text-primary/10 mb-4 leading-none">01</div>
-                        <h4 class="font-headline text-sm font-bold uppercase mb-4 tracking-widest">Understand</h4>
-                        <p class="text-xs text-on-surface-variant max-w-[200px]">Deep dive into your business goals and customer needs.</p>
-                    </div>
-                    <div class="bg-surface flex flex-col items-center text-center">
-                        <div class="font-accent text-7xl text-primary/10 mb-4 leading-none">02</div>
-                        <h4 class="font-headline text-sm font-bold uppercase mb-4 tracking-widest">Build</h4>
-                        <p class="text-xs text-on-surface-variant max-w-[200px]">Crafting the visual and technical core of your site.</p>
-                    </div>
-                    <div class="bg-surface flex flex-col items-center text-center">
-                        <div class="font-accent text-7xl text-primary/10 mb-4 leading-none">03</div>
-                        <h4 class="font-headline text-sm font-bold uppercase mb-4 tracking-widest">Refine</h4>
-                        <p class="text-xs text-on-surface-variant max-w-[200px]">Polishing the details for a perfect user experience.</p>
-                    </div>
-                    <div class="bg-surface flex flex-col items-center text-center">
-                        <div class="font-accent text-7xl text-primary/10 mb-4 leading-none">04</div>
-                        <h4 class="font-headline text-sm font-bold uppercase mb-4 tracking-widest">Launch</h4>
-                        <p class="text-xs text-on-surface-variant max-w-[200px]">Executing a flawless entry into your local market.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Results/Stats -->
-    <section class="relative py-24 overflow-hidden text-center bg-surface-container-low border-y border-white/5">
-        <div class="absolute inset-0 z-0">
-            <img alt="London Street" class="w-full h-full object-cover opacity-20" src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=2070&auto=format&fit=crop"/>
-            <div class="absolute inset-0 bg-surface/80"></div>
-        </div>
-        <div class="container mx-auto px-8 relative z-10">
-            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight md:tracking-tighter mb-8 uppercase text-primary">Built for local businesses</h2>
-            <p class="font-headline text-3xl text-on-surface leading-snug max-w-3xl mx-auto mb-12">
-                We focus on helping small businesses get online properly — without overcomplication or unnecessary cost.
-            </p>
-        </div>
-    </section>
-    <!-- Testimonials -->
-    <section class="py-32 bg-surface">
-        <div class="container mx-auto px-8">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight md:tracking-tighter text-center mb-16 uppercase">Questions you might have</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="space-y-4">
-                        <h4 class="font-headline font-bold text-lg uppercase text-primary">How long does it take?</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Most websites are built and ready to launch within 3-5 days of our discovery call.</p>
-                    </div>
-                    <div class="space-y-4">
-                        <h4 class="font-headline font-bold text-lg uppercase text-primary">Do I need to do anything technical?</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">No. We handle everything from domains and hosting to SEO and security.</p>
-                    </div>
-                    <div class="space-y-4">
-                        <h4 class="font-headline font-bold text-lg uppercase text-primary">What about domain names?</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Your first year's domain is included free. We manage the registration and setup for you.</p>
-                    </div>
-                    <div class="space-y-4">
-                        <h4 class="font-headline font-bold text-lg uppercase text-primary">What happens after it’s built?</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">We provide ongoing support, monthly analytics, and handle any changes you need to your site.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Add-Ons Grid -->
-    <section class="py-32 bg-surface-container-lowest">
-        <div class="container mx-auto px-8">
-            <div class="text-center mb-24">
-                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight md:tracking-tighter uppercase">Agency Add-Ons</h2>
-                <div class="w-24 h-[2px] bg-primary mx-auto mt-6"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
-                <div class="bg-surface p-12 border border-outline-variant/10 group hover:bg-primary transition-all duration-500">
-                    <h4 class="font-headline text-lg font-bold uppercase mb-2 group-hover:text-on-primary">Logo & Brand Identity</h4>
-                    <div class="font-accent text-3xl text-primary group-hover:text-on-primary mb-4">£99</div>
-                    <p class="text-xs text-on-surface-variant group-hover:text-on-primary/80">AI-refined logo delivered in all formats.</p>
-                </div>
-                <div class="bg-surface p-12 border border-outline-variant/10 group hover:bg-primary transition-all duration-500">
-                    <h4 class="font-headline text-lg font-bold uppercase mb-2 group-hover:text-on-primary">Brand Kit</h4>
-                    <div class="font-accent text-3xl text-primary group-hover:text-on-primary mb-4">£149</div>
-                    <p class="text-xs text-on-surface-variant group-hover:text-on-primary/80">Palette, typography & social templates.</p>
-                </div>
-                <div class="bg-surface p-12 border border-outline-variant/10 group hover:bg-primary transition-all duration-500">
-                    <h4 class="font-headline text-lg font-bold uppercase mb-2 group-hover:text-on-primary">Google Business Profile</h4>
-                    <div class="font-accent text-3xl text-primary group-hover:text-on-primary mb-4">£49</div>
-                    <p class="text-xs text-on-surface-variant group-hover:text-on-primary/80">Setup or full optimisation for visibility.</p>
-                </div>
-                <div class="bg-surface p-12 border border-outline-variant/10 group hover:bg-primary transition-all duration-500">
-                    <h4 class="font-headline text-lg font-bold uppercase mb-2 group-hover:text-on-primary">Full SEO Audit</h4>
-                    <div class="font-accent text-3xl text-primary group-hover:text-on-primary mb-4">£79</div>
-                    <p class="text-xs text-on-surface-variant group-hover:text-on-primary/80">Specific findings & roadmap for ranking.</p>
-                </div>
-                <div class="bg-surface p-12 border border-outline-variant/10 group hover:bg-primary transition-all duration-500">
-                    <h4 class="font-headline text-lg font-bold uppercase mb-2 group-hover:text-on-primary">Monthly SEO</h4>
-                    <div class="font-accent text-3xl text-primary group-hover:text-on-primary mb-4">£79/mo</div>
-                    <p class="text-xs text-on-surface-variant group-hover:text-on-primary/80">GBP posts, blog content & reports.</p>
-                </div>
-                <div class="bg-surface p-12 border border-outline-variant/10 group hover:bg-primary transition-all duration-500">
-                    <h4 class="font-headline text-lg font-bold uppercase mb-2 group-hover:text-on-primary">Competitor Analysis</h4>
-                    <div class="font-accent text-3xl text-primary group-hover:text-on-primary mb-4">£49</div>
-                    <p class="text-xs text-on-surface-variant group-hover:text-on-primary/80">Gap analysis on why they rank higher.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Inquiry Form -->
-    <section class="py-32 bg-surface reveal" id="inquiry">
-        <div class="container mx-auto px-8 max-w-4xl">
-            <div class="text-center mb-16">
-                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight md:tracking-tighter uppercase mb-4">Start Your <span class="text-primary italic font-headline">Project</span></h2>
-                <p class="text-on-surface-variant font-headline font-bold text-sm tracking-widest uppercase">Fill in your details and we'll get your demo ready.</p>
-            </div>
-            <form action="https://formspree.io/f/xojkoero" method="POST" class="space-y-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="group border-b border-primary/20 focus-within:border-primary transition-all">
-                        <label class="block text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Your Name</label>
-                        <input type="text" name="name" required class="w-full bg-transparent border-none p-0 pb-4 text-neutral-100 placeholder:text-neutral-700 focus:ring-0" placeholder="e.g. John Doe">
-                    </div>
-                    <div class="group border-b border-primary/20 focus-within:border-primary transition-all">
-                        <label class="block text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Email Address</label>
-                        <input type="email" name="email" required class="w-full bg-transparent border-none p-0 pb-4 text-neutral-100 placeholder:text-neutral-700 focus:ring-0" placeholder="e.g. john@business.com">
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="group border-b border-primary/20 focus-within:border-primary transition-all">
-                        <label class="block text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Business Name</label>
-                        <input type="text" name="business" required class="w-full bg-transparent border-none p-0 pb-4 text-neutral-100 placeholder:text-neutral-700 focus:ring-0" placeholder="e.g. London VIP Room">
-                    </div>
-                    <div class="group border-b border-primary/20 focus-within:border-primary transition-all">
-                        <label class="block text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Select Bundle</label>
-                        <select name="bundle" required class="w-full bg-transparent border-none p-0 pb-4 text-neutral-100 focus:ring-0 appearance-none">
-                            <option value="Be Found" class="bg-neutral-900">BE FOUND - £199</option>
-                            <option value="Be Chosen" class="bg-neutral-900">BE CHOSEN - £499</option>
-                            <option value="Be Everywhere" class="bg-neutral-900" selected>BE EVERYWHERE - FROM £999</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="group border-b border-primary/20 focus-within:border-primary transition-all">
-                    <label class="block text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Message (Optional)</label>
-                    <textarea name="message" class="w-full bg-transparent border-none p-0 pb-4 text-neutral-100 placeholder:text-neutral-700 focus:ring-0 min-h-[100px]" placeholder="Tell us a bit more about what you need..."></textarea>
-                </div>
-                <button type="submit" class="w-full py-6 bg-primary text-on-primary font-headline font-bold uppercase tracking-[0.2em] text-lg magnetic-hover hover:scale-[1.02] transition-all">
-                    Send My Demo Request
-                </button>
-            </form>
-        </div>
-    </section>
-    <!-- Final CTA -->
-    <section class="relative h-screen flex items-center justify-center bg-surface overflow-hidden">
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        </div>
-        <div class="relative z-10 text-center px-8">
-            <h2 class="font-display text-3xl md:text-6xl font-extrabold tracking-tighter uppercase mb-6">LET'S BUILD SOMETHING<br/><span class="text-primary italic font-headline">that works.</span></h2>
-            <p class="font-headline font-bold text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto">If your business doesn’t have a proper website, you’re likely missing out on customers.</p>
-            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                <a href="#inquiry" class="bg-primary text-on-primary px-12 py-6 font-headline font-bold uppercase tracking-widest text-lg magnetic-hover hover:scale-105 transition-all">
-                    Start your site
-                </a>
-                <a href="https://wa.me/447459887616" class="bg-surface border-2 border-primary text-primary px-12 py-6 font-headline font-bold uppercase tracking-widest text-lg magnetic-hover hover:bg-primary hover:text-on-primary transition-all text-center">
-                    See a demo
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer class="bg-neutral-950 border-none pt-24 pb-20">
-        <div class="flex flex-col items-center justify-center text-center px-8 reveal">
-            <div class="text-lg sm:text-xl md:text-2xl font-bold text-neutral-100 font-headline uppercase tracking-tight md:tracking-tighter mb-12">
-                <span class="text-[#F5F0E8]">Collab</span><span class="text-[#C9A84C]">Create</span><span class="text-[#F5F0E8] hidden sm:inline">Marketing</span><span class="text-[#F5F0E8] sm:hidden">Mktg</span>
             </div>
             
-            <div class="space-y-10">
-                <div class="space-y-4">
-                    <h5 class="text-amber-400 font-headline font-bold text-[10px] uppercase tracking-[0.4em]">Get in touch</h5>
-                    <a href="mailto:collabcreatemarketing@gmail.com" class="block font-headline text-lg sm:text-xl md:text-3xl text-neutral-100 font-bold hover:text-primary transition-colors cursor-none break-all sm:break-normal">collabcreatemarketing@gmail.com</a>
-                    <a href="tel:07459887616" class="block font-headline text-xl sm:text-2xl md:text-3xl text-neutral-100 font-bold hover:text-primary transition-colors cursor-none">07459 887616</a>
+            <div class="reveal" style="margin-top: 4rem; border-radius: 8px; overflow: hidden;">
+                <img src="CCM_Assets/growth-results.jpg" alt="Successful Client Results" style="width: 100%; height: 600px; object-fit: cover; object-position: center;">
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio-section container">
+        <div class="reveal">
+            <span class="section-label">Our Work</span>
+            <h2 style="font-size: 3.5rem; margin-bottom: 1rem;">Websites that work for local businesses.</h2>
+            <p>Every site we build is designed for one thing: getting you more customers.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card reveal">
+                    <img src="CCM_Assets/case-study-barber.png" alt="Barbershop Website">
+                    <div class="portfolio-info">
+                        <h4>Best Barbers</h4>
+                        <p>A premium, editorial-style site for a local barber focusing on brand authority.</p>
+                    </div>
                 </div>
-                
-                <div class="pt-20 border-t border-white/5 w-64 mx-auto">
-                    <p class="font-label text-neutral-600 uppercase tracking-[0.3em] text-[9px]">
-                        © 2026 CollabCreateMarketing.
-                    </p>
+                <div class="portfolio-card reveal" style="transition-delay: 0.1s;">
+                    <img src="CCM_Assets/case-study-nightlife.png" alt="Nightlife Website">
+                    <div class="portfolio-info">
+                        <h4>The Lucky Pig</h4>
+                        <p>Luxury cocktail bar booking system and events platform.</p>
+                    </div>
                 </div>
+                <div class="portfolio-card reveal" style="transition-delay: 0.2s;">
+                    <img src="CCM_Assets/case-study-wellness.png" alt="Wellness Website">
+                    <div class="portfolio-info">
+                        <h4>Me Time Off</h4>
+                        <p>A clean, calming booking platform for a premium wellness and beauty clinic.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card reveal" style="transition-delay: 0.3s;">
+                    <img src="CCM_Assets/case-study-utility.png" alt="Utility Service Website">
+                    <div class="portfolio-info">
+                        <h4>Wrong Fuel London</h4>
+                        <p>High-conversion emergency service landing page with mobile-first design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-proof container">
+        <span class="section-label">What Our Clients Say</span>
+        <h2 style="font-size: 3.5rem;">Real businesses. Real results.</h2>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card reveal">
+                <p>"I couldn't be happier with my free website. I expected a catch but there wasn't one. A pleasure working with Mo."</p>
+                <div class="testimonial-author">— Best Barbers</div>
+            </div>
+            <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+                <p>"I was able to cancel my contract with my old agency and instantly save money. Thank you Mo."</p>
+                <div class="testimonial-author">— Butterfly Barbershop</div>
+            </div>
+            <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+                <p>"We didn't think we really needed a website but since it was free we gave it a shot — and it's worked wonders."</p>
+                <div class="testimonial-author">— The Lucky Pig</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2>Get your business online today — at no cost.</h2>
+            <p>Submit your details. We build it. You're live.</p>
+            <a href="free-website.html" class="btn btn-primary" style="background: white; color: var(--accent-color);">Claim Your Free Website</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="CCM_Assets/logo.svg" alt="CCM Logo" class="logo">
+                    <p class="tagline">Transparency. Reliability. Results.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Agency</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="free-website.html">Free Website</a></li>
+                        <li><a href="review-system.html">Review System</a></li>
+                        <li><a href="growth-system.html">Growth System</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hello@collabcreatemarketing.com">hello@collabcreatemarketing.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CollabCreate Marketing. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <script>
-        const dot = document.getElementById('cursor-dot');
-        const ring = document.getElementById('cursor-ring');
 
-        document.addEventListener('mousemove', (e) => {
-            dot.style.left = e.clientX + 'px';
-            dot.style.top = e.clientY + 'px';
-            
-            setTimeout(() => {
-                ring.style.left = e.clientX + 'px';
-                ring.style.top = e.clientY + 'px';
-            }, 50);
-        });
-
-        // Scroll Reveal Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        // Add reveal class to all major sections
-        document.querySelectorAll('section').forEach(section => {
-            if (!section.querySelector('.reveal')) {
-                section.classList.add('reveal');
-                observer.observe(section);
-            }
-        });
-
-        document.querySelectorAll('a, button, .magnetic-hover').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                ring.style.width = '60px';
-                ring.style.height = '60px';
-                ring.style.backgroundColor = 'rgba(230, 195, 100, 0.1)';
-            });
-            el.addEventListener('mouseleave', () => {
-                ring.style.width = '40px';
-                ring.style.height = '40px';
-                ring.style.backgroundColor = 'transparent';
-                el.style.transform = 'translate(0px, 0px)';
-            });
-            
-            el.addEventListener('mousemove', (e) => {
-                if (el.classList.contains('magnetic-hover')) {
-                    const rect = el.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
