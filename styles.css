@@ -336,9 +336,18 @@ footer {
     display: block;
   }
 
+  .nav-logo img {
+    height: 40px;
+  }
+
   .nav-cta .btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .founder-img {
+    transform: scale(1.4);
+    object-position: center 30% !important;
   }
   
   .footer-content {
