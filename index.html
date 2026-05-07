@@ -306,36 +306,28 @@
             
             <div class="portfolio-grid">
                 <div class="portfolio-card reveal">
-                    <a href="CCM_Assets/case-study-barber.png" target="_blank">
-                        <img src="CCM_Assets/case-study-barber.png" alt="Barbershop Website">
-                    </a>
+                    <img src="CCM_Assets/case-study-barber.png" alt="Best Barbers" class="lightbox-trigger" data-full="CCM_Assets/case-study-barber.png">
                     <div class="portfolio-info">
                         <h4>Best Barbers</h4>
                         <p>A premium, editorial-style site for a local barber focusing on brand authority.</p>
                     </div>
                 </div>
                 <div class="portfolio-card reveal" style="transition-delay: 0.1s;">
-                    <a href="CCM_Assets/case-study-nightlife.png" target="_blank">
-                        <img src="CCM_Assets/case-study-nightlife.png" alt="Nightlife Website">
-                    </a>
+                    <img src="CCM_Assets/case-study-nightlife.png" alt="The Lucky Pig" class="lightbox-trigger" data-full="CCM_Assets/case-study-nightlife.png">
                     <div class="portfolio-info">
                         <h4>The Lucky Pig</h4>
                         <p>Luxury cocktail bar booking system and events platform.</p>
                     </div>
                 </div>
                 <div class="portfolio-card reveal" style="transition-delay: 0.2s;">
-                    <a href="CCM_Assets/case-study-wellness.png" target="_blank">
-                        <img src="CCM_Assets/case-study-wellness.png" alt="Wellness Website">
-                    </a>
+                    <img src="CCM_Assets/case-study-wellness.png" alt="Me Time Off" class="lightbox-trigger" data-full="CCM_Assets/case-study-wellness.png">
                     <div class="portfolio-info">
                         <h4>Me Time Off</h4>
                         <p>A clean, calming booking platform for a premium wellness and beauty clinic.</p>
                     </div>
                 </div>
                 <div class="portfolio-card reveal" style="transition-delay: 0.3s;">
-                    <a href="CCM_Assets/case-study-utility.png" target="_blank">
-                        <img src="CCM_Assets/case-study-utility.png" alt="Utility Service Website" style="object-position: left top;">
-                    </a>
+                    <img src="CCM_Assets/case-study-utility.png" alt="Wrong Fuel London" class="lightbox-trigger" data-full="CCM_Assets/case-study-utility.png">
                     <div class="portfolio-info">
                         <h4>Wrong Fuel London</h4>
                         <p>High-conversion emergency service landing page with mobile-first design.</p>
@@ -409,7 +401,31 @@
         </div>
     </footer>
 
+    <div class="lightbox-overlay" id="lightbox">
+        <img src="" alt="Full view" class="lightbox-image" id="lightboxImg">
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const fullSrc = trigger.getAttribute('data-full');
+                lightboxImg.src = fullSrc;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
 </body>
 </html>
 
