@@ -130,22 +130,22 @@ section {
   padding: 0 5%;
 }
 
-.nav-cta {
-  order: 1;
-  margin-right: 2rem;
-}
-
 .nav-logo {
-  order: 2;
+  order: 1;
   margin-right: auto;
 }
 
 .nav-links {
-  order: 3;
+  order: 2;
   display: flex;
   gap: 2.5rem;
   align-items: center;
   list-style: none;
+}
+
+.nav-cta {
+  order: 3;
+  margin-right: 2rem;
 }
 
 .nav-links > li {
@@ -353,15 +353,15 @@ footer {
     padding: 1rem 0;
   }
 
-  .nav-cta {
+  .nav-logo {
     order: 1;
-    margin-left: 0;
-    margin-right: 1.5rem;
+    margin-right: auto;
   }
 
-  .nav-logo {
+  .nav-cta {
     order: 2;
-    margin-right: auto;
+    margin-right: 1rem;
+    margin-left: auto;
   }
 
   .hamburger {
