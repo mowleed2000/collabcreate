@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | CollabCreate Marketing</title>
+    <meta name="description" content="Let's talk. Whether you want a free website, a growth system, or something more bespoke — start here.">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .hero-contact {
+            padding: 12rem 5% 6rem;
+            text-align: center;
+        }
+
+        .hero-contact h1 {
+            font-size: 5rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 6rem;
+            margin-bottom: 8rem;
+        }
+
+        .contact-form-container {
+            background: white;
+            padding: 5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+
+        .contact-info {
+            padding-top: 5rem;
+        }
+
+        .info-block {
+            margin-bottom: 4rem;
+        }
+
+        .info-block h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            }
+
+        .info-block p {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .tagline-quote {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-top: 4rem;
+            border-left: 4px solid var(--accent-light);
+            padding-left: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero-contact h1 { font-size: 3.5rem; }
+            .contact-form-container { padding: 2.5rem; }
+            .contact-info { padding-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../CCM_Assets/logo.svg" alt="CCM Logo">
+            </a>
+                        <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Services</a>
+                    <ul class="dropdown">
+                        <li><a href="../free-website/">Free Website</a></li>
+                        <li><a href="../review-system/">Review System</a></li>
+                        <li><a href="../growth-system/">Growth System</a></li>
+                        <li><a href="../premium-website/">Premium Website</a></li>
+                        <li><a href="../client-acquisition/">Client Acquisition</a></li>
+                    </ul>
+                </li>
+                <li><a href="../about/">About</a></li>
+                <li><a href="../contact/">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="../contact/" class="btn btn-primary">Get Started</a>
+            </div>
+            <button class="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero-contact container">
+        <div class="reveal">
+            <span class="section-label">Contact</span>
+            <h1>Let's talk.</h1>
+            <p style="font-size: 1.5rem; max-width: 700px; margin: 0 auto;">Whether you want a free website, a growth system, or something more bespoke — start here.</p>
+        </div>
+        <div class="reveal" style="margin-top: 5rem; border-radius: 8px; overflow: hidden;">
+            <img src="../CCM_Assets/contact-hero.jpg" alt="Contact Us" style="width: 100%; height: 500px; object-fit: cover;">
+        </div>
+    </header>
+
+    <main class="container contact-layout">
+        <div class="contact-form-container reveal">
+            <form action="https://formspree.io/f/xojkoero" method="POST">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Business Name</label>
+                    <input type="text" name="business_name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>What are you interested in?</label>
+                    <select name="service" required>
+                        <option value="">Select option</option>
+                        <option value="free">Free Website</option>
+                        <option value="review">Review System</option>
+                        <option value="growth">Growth System</option>
+                        <option value="premium">Premium Website</option>
+                        <option value="acquisition">Client Acquisition</option>
+                        <option value="other">Something Else</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+
+        <div class="contact-info reveal" style="transition-delay: 0.2s;">
+            <div class="info-block">
+                <h3>Email</h3>
+                <p><a href="mailto:Collabcreatemarketing@gmail.com">Collabcreatemarketing@gmail.com</a></p>
+            </div>
+            <div class="info-block">
+                <h3>Response time</h3>
+                <p>We respond to every enquiry within one business day.</p>
+            </div>
+            
+            <img src="../CCM_Assets/contact-response.jpg" alt="Quick Response" style="border-radius: 8px; margin-top: 2rem;">
+
+            <div class="tagline-quote">
+                "We don't believe in making people wait. If you've taken the time to reach out, we'll take the time to respond properly."
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../CCM_Assets/logo.svg" alt="CCM Logo" class="logo">
+                    <p class="tagline">Transparency. Reliability. Results.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Agency</h4>
+                    <ul>
+                        <li><a href="../about/">About</a></li>
+                        <li><a href="../contact/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../free-website/">Free Website</a></li>
+                        <li><a href="../review-system/">Review System</a></li>
+                        <li><a href="../growth-system/">Growth System</a></li>
+                        <li><a href="../client-acquisition/">Client Acquisition</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:Collabcreatemarketing@gmail.com">Collabcreatemarketing@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CollabCreate Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
