@@ -124,6 +124,47 @@
                 padding: 2rem;
             }
         }
+
+        .charity-section {
+            background-color: #fafbfc;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .charity-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .charity-logo {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .charity-logo img {
+            max-height: 120px;
+            width: auto;
+        }
+
+        @media (max-width: 768px) {
+            .charity-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .charity-logo {
+                order: -1;
+                margin: 0 auto;
+                max-width: 250px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -230,6 +271,26 @@
         
         <div class="reveal" style="margin-top: 5rem; border-radius: 8px; overflow: hidden;">
             <img src="CCM_Assets/free-website-mobile.jpg" alt="Mobile Optimized" style="width: 100%; height: 500px; object-fit: cover;">
+        </div>
+    </section>
+
+    <section class="charity-section">
+        <div class="container">
+            <div class="charity-content reveal">
+                <div class="charity-text">
+                    <span class="section-label" style="color: var(--text-muted);">Social Impact</span>
+                    <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 2rem; line-height: 1.1;">Every website we build does more than get you online.</h2>
+                    <p style="margin-bottom: 2rem; color: var(--text-color); line-height: 1.6;">
+                        For every business we onboard onto a free website, we donate £1 to The King's Trust — the UK's leading youth charity supporting young people into employment and entrepreneurship. We're aiming to onboard 1,000 businesses. We're asking every owner we work with to match it if they can. A small agency. A thousand businesses. A few grand to a charity that gives young people their first shot.
+                    </p>
+                    <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); opacity: 0.8;">
+                        The King's Trust — Registered Charity No. 1079675
+                    </p>
+                </div>
+                <div class="charity-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/f/f0/King%27s_Trust_logo.svg" alt="The King's Trust Logo">
+                </div>
+            </div>
         </div>
     </section>
 
