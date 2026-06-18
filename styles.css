@@ -145,6 +145,7 @@ section {
 
 .nav-cta {
   order: 3;
+  margin-left: 2.5rem;
   margin-right: 2rem;
 }
 
@@ -205,11 +206,9 @@ section {
 }
 
 .nav-cta .btn {
-  padding: 0.3rem 0.7rem !important;
-  font-size: 0.7rem !important;
-  white-space: nowrap !important;
-  min-height: auto !important;
-  height: auto !important;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
 }
 
 /* Buttons */
