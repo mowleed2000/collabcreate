@@ -249,35 +249,38 @@
             </div>
             
             <div class="premium-form reveal" style="transition-delay: 0.2s;">
-                <form>
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="5bba1f84-9bcb-4985-857f-299ad8315b75">
+                    <input type="hidden" name="subject" value="New Premium Website Enquiry - CollabCreate Marketing">
+                    <input type="hidden" name="from_name" value="CollabCreate Premium Form">
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Business Name</label>
-                            <input type="text" required>
+                            <input type="text" name="business_name" required>
                         </div>
                         <div class="form-group">
                             <label>Your Name</label>
-                            <input type="text" required>
+                            <input type="text" name="name" required>
                         </div>
                         <div class="form-group">
                             <label>Industry / Business Type</label>
-                            <input type="text" required>
+                            <input type="text" name="industry" required>
                         </div>
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input type="tel" required>
+                            <input type="tel" name="phone" required>
                         </div>
                         <div class="form-group full-width">
                             <label>Email Address</label>
-                            <input type="email" required>
+                            <input type="email" name="email" required>
                         </div>
                         <div class="form-group full-width">
                             <label>Current website URL if applicable</label>
-                            <input type="url">
+                            <input type="url" name="website">
                         </div>
                         <div class="form-group full-width">
                             <label>Tell us about your business and what you need</label>
-                            <textarea rows="6" required></textarea>
+                            <textarea name="message" rows="6" required></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Send Enquiry</button>
