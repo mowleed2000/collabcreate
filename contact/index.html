@@ -1,236 +1,217 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | CollabCreate Marketing</title>
-    <meta name="description" content="Let's talk. Whether you want a free website demo, a growth system, or something more bespoke — start here.">
+    <title>Contact Collab Create Marketing</title>
+    <meta name="description" content="Contact CCM for business solution enquiries, sales partner interest or general questions. We respond within one business day.">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Contact Collab Create Marketing">
+    <meta property="og:description" content="Contact CCM for business solution enquiries, sales partner interest or general questions. We respond within one business day.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../CCM_Assets/contact-hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="../styles.css">
-    <style>
-        .hero-contact {
-            padding: 12rem 5% 6rem;
-            text-align: center;
-        }
-
-        .hero-contact h1 {
-            font-size: 5rem;
-            margin: 1.5rem 0 2rem;
-        }
-
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 6rem;
-            margin-bottom: 8rem;
-        }
-
-        .contact-form-container {
-            background: white;
-            padding: 5rem;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-        }
-
-        .contact-info {
-            padding-top: 5rem;
-        }
-
-        .info-block {
-            margin-bottom: 4rem;
-        }
-
-        .info-block h3 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            }
-
-        .info-block p {
-            font-size: 1.5rem;
-            color: var(--text-color);
-            font-weight: 500;
-        }
-
-        .tagline-quote {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            font-style: italic;
-            color: var(--text-muted);
-            line-height: 1.4;
-            margin-top: 4rem;
-            border-left: 4px solid var(--accent-light);
-            padding-left: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            font-size: 0.9rem;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 1.2rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        @media (max-width: 1024px) {
-            .contact-layout {
-                grid-template-columns: 1fr;
-            }
-            .hero-contact h1 { font-size: 3.5rem; }
-            .contact-form-container { padding: 2.5rem; }
-            .contact-info { padding-top: 0; }
-        }
-    </style>
+    <style>@media(max-width:1024px){main.container{grid-template-columns:1fr!important;}}</style>
 </head>
 <body>
-
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../" class="nav-logo">
-                <img src="../CCM_Assets/logo.svg" alt="CCM Logo">
+            <a href="../index.html" class="nav-logo">
+                <img src="../CCM_Assets/logo.svg" alt="Collab Create Marketing">
             </a>
-                        <ul class="nav-links">
-                <li><a href="../">Home</a></li>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
                 <li class="has-dropdown">
-                    <a href="#">Services</a>
-                    <ul class="dropdown">
+                    <a href="../business-solutions/">Business Solutions</a>
+                    <ul class="dropdown wide">
+                        <li><span class="dropdown-label">Portfolio</span></li>
+                        <li><a href="../business-solutions/">All Solutions</a></li>
+                        <li><a href="../solutions/websites-digital/">Websites &amp; Digital</a></li>
+                        <li><a href="../solutions/ai-voice-agents/">AI Voice Agents</a></li>
+                        <li><a href="../solutions/business-energy/">Business Energy</a></li>
+                        <li><a href="../solutions/business-broadband/">Business Broadband</a></li>
+                        <li><a href="../solutions/card-payments/">Card Payments</a></li>
+                        <li><a href="../solutions/business-funding/">Business Funding</a></li>
+                        <li><a href="../solutions/branded-products/">Branded Products</a></li>
+                        <li><span class="dropdown-label">Digital Services</span></li>
                         <li><a href="../free-demo/">Free Website Demo</a></li>
+                        <li><a href="../premium-website/">Premium Website</a></li>
                         <li><a href="../review-system/">Review System</a></li>
                         <li><a href="../growth-system/">Growth System</a></li>
-                        <li><a href="../premium-website/">Premium Website</a></li>
                         <li><a href="../client-acquisition/">Client Acquisition</a></li>
                     </ul>
                 </li>
                 <li><a href="../about/">About</a></li>
+                <li class="has-dropdown">
+                    <a href="../sales-partners/">Sales Partners</a>
+                    <ul class="dropdown">
+                        <li><a href="../sales-partners/">Partner Opportunity</a></li>
+                        <li><a href="../careers/">Sales Representative Role</a></li>
+                        <li><a href="../careers/apply/">Apply Now</a></li>
+                    </ul>
+                </li>
                 <li><a href="../contact/">Contact</a></li>
             </ul>
             <div class="nav-cta">
-                <a href="../contact/" class="btn btn-primary">Get Started</a>
+                <a href="../business-solutions/" class="btn btn-primary">Explore Solutions</a>
             </div>
-            <button class="hamburger">
+            <button class="hamburger" aria-label="Open menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
-    <header class="hero-contact container">
-        <div class="reveal">
+    <header class="page-hero" style="padding-bottom:3rem;">
+        <div class="container reveal" style="text-align:center;max-width:800px;margin:0 auto;">
             <span class="section-label">Contact</span>
             <h1>Let's talk.</h1>
-            <p style="font-size: 1.5rem; max-width: 700px; margin: 0 auto;">Whether you want a free website demo, a growth system, or something more bespoke — start here.</p>
-        </div>
-        <div class="reveal" style="margin-top: 5rem; border-radius: 8px; overflow: hidden;">
-            <img src="../CCM_Assets/contact-hero.jpg" alt="Contact Us" style="width: 100%; height: 500px; object-fit: cover;">
+            <p class="lead" style="margin-left:auto;margin-right:auto;">Business enquiries, partner interest or something more specific — choose a category and we will respond within one business day.</p>
         </div>
     </header>
 
-    <main class="container contact-layout">
-        <div class="contact-form-container reveal">
-            <form action="https://api.web3forms.com/submit" method="POST">
+    <main class="container" style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:4rem;padding-bottom:6rem;">
+        <div class="form-panel reveal">
+            <form data-ccm-form data-redirect="success/" data-success-message="Thank you — your message has been received.">
                 <input type="hidden" name="access_key" value="5bba1f84-9bcb-4985-857f-299ad8315b75">
-                <input type="hidden" name="subject" value="New General Enquiry - CollabCreate Marketing">
-                <input type="hidden" name="from_name" value="CollabCreate Contact Form">
-                <div class="form-group">
-                    <label>Your Name</label>
-                    <input type="text" name="name" required>
+                <input type="hidden" name="subject" value="New Website Enquiry — Collab Create Marketing">
+                <input type="hidden" name="from_name" value="CCM Contact Form">
+                <div class="form-status" role="status" aria-live="polite"></div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Your name <span class="req">*</span></label>
+                        <input type="text" name="name" required autocomplete="name">
+                        <div class="field-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Business / organisation</label>
+                        <input type="text" name="business_name" autocomplete="organization">
+                        <div class="field-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email <span class="req">*</span></label>
+                        <input type="email" name="email" required autocomplete="email">
+                        <div class="field-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Telephone <span class="req">*</span></label>
+                        <input type="tel" name="phone" required autocomplete="tel">
+                        <div class="field-error"></div>
+                    </div>
+                    <div class="form-group full">
+                        <label>Enquiry category <span class="req">*</span></label>
+                        <select name="enquiry_category" id="enquiry_category" required>
+                            <option value="">Select a category</option>
+                            <option value="websites-digital">Websites &amp; Digital</option>
+                            <option value="ai-voice-agents">AI Voice Agents</option>
+                            <option value="business-energy">Business Energy</option>
+                            <option value="business-broadband">Business Broadband</option>
+                            <option value="card-payments">Card Payments</option>
+                            <option value="business-funding">Business Funding</option>
+                            <option value="branded-products">Branded Products</option>
+                            <option value="free-demo">Free Website Demo</option>
+                            <option value="sales-partner">Sales Partner Interest</option>
+                            <option value="sales-representative">Sales Representative Application Query</option>
+                            <option value="general">General Enquiry</option>
+                        </select>
+                        <div class="field-error"></div>
+                    </div>
+                    <div class="form-group full">
+                        <label>Message <span class="req">*</span></label>
+                        <textarea name="message" rows="6" required placeholder="Tell us what you need, your location, and any useful context."></textarea>
+                        <div class="field-error"></div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Business Name</label>
-                    <input type="text" name="business_name" required>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="contact_consent" name="consent" value="yes" required>
+                    <label for="contact_consent">I consent to Collab Create Marketing contacting me about this enquiry and handling my details for that purpose. <span class="req">*</span></label>
                 </div>
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label>What are you interested in?</label>
-                    <select name="service" required>
-                        <option value="">Select option</option>
-                        <option value="free">Free Website Demo</option>
-                        <option value="review">Review System</option>
-                        <option value="growth">Growth System</option>
-                        <option value="premium">Premium Website</option>
-                        <option value="acquisition">Client Acquisition</option>
-                        <option value="other">Something Else</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="6" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                <div class="field-error" style="margin-top:-0.5rem;margin-bottom:1rem;"></div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Send message</button>
             </form>
         </div>
-
-        <div class="contact-info reveal" style="transition-delay: 0.2s;">
-            <div class="info-block">
-                <h3>Email</h3>
-                <p><a href="mailto:Collabcreatemarketing@gmail.com">Collabcreatemarketing@gmail.com</a></p>
+        <div class="reveal" style="transition-delay:0.12s;">
+            <div style="margin-bottom:2.5rem;">
+                <p style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-color);font-weight:700;margin-bottom:0.75rem;">Email</p>
+                <p style="font-size:1.35rem;color:var(--text-color);font-weight:500;"><a href="mailto:Collabcreatemarketing@gmail.com">Collabcreatemarketing@gmail.com</a></p>
             </div>
-            <div class="info-block">
-                <h3>Response time</h3>
-                <p>We respond to every enquiry within one business day.</p>
+            <div style="margin-bottom:2.5rem;">
+                <p style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-color);font-weight:700;margin-bottom:0.75rem;">Response time</p>
+                <p style="font-size:1.2rem;color:var(--text-color);">We respond to every enquiry within one business day.</p>
             </div>
-            
-            <img src="../CCM_Assets/contact-response.jpg" alt="Quick Response" style="border-radius: 8px; margin-top: 2rem;">
-
-            <div class="tagline-quote">
-                "We don't believe in making people wait. If you've taken the time to reach out, we'll take the time to respond properly."
+            <div style="margin-bottom:2.5rem;">
+                <p style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-color);font-weight:700;margin-bottom:0.75rem;">Quick links</p>
+                <div class="related-links">
+                    <a href="../business-solutions/">Business Solutions</a>
+                    <a href="../sales-partners/">Sales Partners</a>
+                    <a href="../careers/apply/">Apply for the sales role</a>
+                </div>
             </div>
+            <img src="../CCM_Assets/contact-response.jpg" alt="We respond quickly" style="border-radius:8px;" loading="lazy">
         </div>
     </main>
-
+    <script>
+      (function(){
+        const params = new URLSearchParams(window.location.search);
+        const interest = params.get('interest');
+        const select = document.getElementById('enquiry_category');
+        if (interest && select) {
+          const opt = Array.from(select.options).find(o => o.value === interest);
+          if (opt) select.value = interest;
+        }
+      })();
+    </script>
+    
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <img src="../CCM_Assets/logo.svg" alt="CCM Logo" class="logo">
-                    <p class="tagline">Transparency. Reliability. Results.</p>
+                    <p class="tagline">Practical business solutions. Nationwide sales partners. Clear commercial relationships.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Agency</h4>
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="../about/">About</a></li>
+                        <li><a href="../about/">About CCM</a></li>
                         <li><a href="../contact/">Contact</a></li>
+                        <li><a href="../sales-partners/">Sales Partners</a></li>
+                        <li><a href="../careers/">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Services</h4>
+                    <h4>Solutions</h4>
                     <ul>
+                        <li><a href="../business-solutions/">All Solutions</a></li>
+                        <li><a href="../solutions/websites-digital/">Websites &amp; Digital</a></li>
+                        <li><a href="../solutions/ai-voice-agents/">AI Voice Agents</a></li>
+                        <li><a href="../solutions/business-energy/">Business Energy</a></li>
+                        <li><a href="../solutions/card-payments/">Card Payments</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>More</h4>
+                    <ul>
+                        <li><a href="../solutions/business-broadband/">Broadband</a></li>
+                        <li><a href="../solutions/business-funding/">Funding</a></li>
+                        <li><a href="../solutions/branded-products/">Branded Products</a></li>
                         <li><a href="../free-demo/">Free Website Demo</a></li>
-                        <li><a href="../review-system/">Review System</a></li>
-                        <li><a href="../growth-system/">Growth System</a></li>
-                        <li><a href="../client-acquisition/">Client Acquisition</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:Collabcreatemarketing@gmail.com">Collabcreatemarketing@gmail.com</a></li>
+                        <li><a href="../careers/apply/">Apply to Sell</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 CollabCreate Marketing. All rights reserved.</p>
+                <p>&copy; 2026 Collab Create Marketing. All rights reserved.</p>
+                <p>UK business solutions &amp; sales partner network</p>
             </div>
         </div>
     </footer>
-
     <script src="../script.js"></script>
 </body>
 </html>
