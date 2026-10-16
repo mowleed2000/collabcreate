@@ -97,6 +97,7 @@ document.querySelectorAll('form[data-ccm-form]').forEach((form) => {
   // Ensure Web3Forms action is set for native submit
   form.setAttribute('action', 'https://api.web3forms.com/submit');
   form.setAttribute('method', 'POST');
+  form.setAttribute('novalidate', '');
 
   const statusEl = form.querySelector('.form-status');
   const submitBtn = form.querySelector('[type="submit"]');
