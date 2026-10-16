@@ -48,7 +48,8 @@ if (navbar) {
   });
 }
 
-// Shared form helpers — Web3Forms with validation + feedback
+// Shared form helpers — validate client-side, then native POST to Web3Forms
+// (native navigation avoids CORS issues that affect fetch() on some origins)
 function setFieldError(input, message) {
   input.classList.add('error');
   const err = input.parentElement.querySelector('.field-error');
@@ -75,7 +76,28 @@ function validatePhone(value) {
   return /^[\d\s+\-()]{7,}$/.test(value.trim());
 }
 
+function ensureAbsoluteRedirect(form) {
+  const relative = form.getAttribute('data-redirect');
+  if (!relative) return;
+  let redirectInput = form.querySelector('input[name="redirect"]');
+  if (!redirectInput) {
+    redirectInput = document.createElement('input');
+    redirectInput.type = 'hidden';
+    redirectInput.name = 'redirect';
+    form.appendChild(redirectInput);
+  }
+  try {
+    redirectInput.value = new URL(relative, window.location.href).href;
+  } catch (e) {
+    redirectInput.value = relative;
+  }
+}
+
 document.querySelectorAll('form[data-ccm-form]').forEach((form) => {
+  // Ensure Web3Forms action is set for native submit
+  form.setAttribute('action', 'https://api.web3forms.com/submit');
+  form.setAttribute('method', 'POST');
+
   const statusEl = form.querySelector('.form-status');
   const submitBtn = form.querySelector('[type="submit"]');
 
@@ -84,8 +106,7 @@ document.querySelectorAll('form[data-ccm-form]').forEach((form) => {
     field.addEventListener('change', () => clearFieldError(field));
   });
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  form.addEventListener('submit', (e) => {
     if (statusEl) {
       statusEl.className = 'form-status';
       statusEl.textContent = '';
@@ -100,11 +121,11 @@ document.querySelectorAll('form[data-ccm-form]').forEach((form) => {
           valid = false;
           field.classList.add('error');
           const group = field.closest('.checkbox-group');
-          if (group && !group.querySelector('.field-error.show')) {
-            let err = group.parentElement.querySelector('.checkbox-error');
-            if (!err) {
+          if (group) {
+            let err = group.nextElementSibling;
+            if (!err || !err.classList.contains('field-error')) {
               err = document.createElement('div');
-              err.className = 'field-error checkbox-error show';
+              err.className = 'field-error checkbox-error';
               group.insertAdjacentElement('afterend', err);
             }
             err.textContent = 'This confirmation is required.';
@@ -129,53 +150,22 @@ document.querySelectorAll('form[data-ccm-form]').forEach((form) => {
     });
 
     if (!valid) {
+      e.preventDefault();
       if (statusEl) {
         statusEl.className = 'form-status error';
         statusEl.textContent = 'Please correct the highlighted fields and try again.';
+        statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
       const firstError = form.querySelector('.error');
-      if (firstError) firstError.focus();
+      if (firstError) firstError.focus({ preventScroll: true });
       return;
     }
 
-    const originalLabel = submitBtn ? submitBtn.textContent : '';
+    // Valid — prepare absolute redirect and allow native POST to Web3Forms
+    ensureAbsoluteRedirect(form);
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting…';
-    }
-
-    try {
-      const formData = new FormData(form);
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData,
-      });
-      const result = await response.json();
-
-      if (response.ok && result.success) {
-        const redirect = form.getAttribute('data-redirect');
-        if (redirect) {
-          window.location.href = redirect;
-          return;
-        }
-        if (statusEl) {
-          statusEl.className = 'form-status success';
-          statusEl.textContent = form.getAttribute('data-success-message') || 'Thank you — your submission has been received.';
-        }
-        form.reset();
-      } else {
-        throw new Error(result.message || 'Submission failed');
-      }
-    } catch (err) {
-      if (statusEl) {
-        statusEl.className = 'form-status error';
-        statusEl.textContent = 'Something went wrong. Please try again or email Collabcreatemarketing@gmail.com.';
-      }
-    } finally {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalLabel;
-      }
     }
   });
 });
